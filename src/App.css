@@ -1,0 +1,359 @@
+/* ===========================
+   Header / Navigation
+   =========================== */
+   .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .nav-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Colorful text logo like the screenshot */
+  .brand { font-weight: 800; letter-spacing: 0.5px; font-size: 22px; display: inline-flex; gap: 2px; }
+  .brand .p{ color: var(--brand-red); }
+  .brand .l{ color: var(--brand-green); }
+  .brand .a{ color: var(--brand-yellow); }
+  .brand .y{ color: var(--brand-blue); }
+  .brand .d{ color: var(--brand-red); }
+  .brand .a2{ color: var(--brand-yellow); }
+  .brand .t{ color: var(--brand-green); }
+  .brand .e{ color: var(--brand-blue); }
+  
+  .nav-links { 
+    display: flex; 
+    gap: 24px; 
+    align-items: center;
+  }
+  
+  /* NAV LINKS — clean + modern (no purple, no default underline) */
+  .link,
+  .link:link,
+  .link:visited {
+    position: relative;
+    display: inline-block;
+    padding: 6px 10px;
+    color: #111827;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 10px;
+    transition: background-color .18s ease, color .18s ease, transform .18s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .link:hover {
+    background-color: rgba(17,24,39,0.06);  /* soft pill hover */
+    color: #111827;
+    transform: translateY(-1px);            /* subtle lift */
+  }
+  
+  .link.active {
+    font-weight: 600;
+    background-color: rgba(17,24,39,0.10);  /* gentle active pill */
+    color: #111827;
+  }
+  
+  /* Keyboard focus ring */
+  .link:focus-visible {
+    outline: 2px solid #111827;
+    outline-offset: 2px;
+    border-radius: 10px;
+  }
+  
+  /* ===========================
+     Page container
+     =========================== */
+  .page { min-height: calc(100vh - 60px); }
+  
+  /* ===========================
+     Hero
+     =========================== */
+  .hero { position: relative; overflow: hidden; }
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 20px 96px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+  }
+  
+  .hero-text h1{
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 800;
+    color: #111827;
+    letter-spacing: -0.02em;
+  }
+  .hero-text .lead{
+    font-size: 17px;
+    color: #4b5563;
+    margin-top: 8px;
+    margin-bottom: 14px;
+  }
+  
+  /* image card */
+  .hero-media { display: flex; justify-content: center; }
+  .photo-card{
+    position: relative;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    background: white;
+  }
+  .photo-card::before{
+    /* subtle inner glow */
+    content: "";
+    position: absolute; inset: 0;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.03);
+    pointer-events: none;
+  }
+  .photo-card img{
+    width: min(540px, 92vw);
+    height: auto;
+    display: block;
+  }
+  
+  /* soft pastel background blob like the screenshot */
+  .hero-bg-blob{
+    position: absolute;
+    right: -10%;
+    top: 10%;
+    width: 60vw; height: 60vw;
+    max-width: 900px; max-height: 900px;
+    border-radius: 50%;
+    background:
+      radial-gradient(50% 50% at 50% 50%,
+        rgba(59,130,246,0.18) 0%,
+        rgba(59,130,246,0.10) 40%,
+        rgba(236,72,153,0.10) 70%,
+        rgba(255,255,255,0) 75%);
+    filter: blur(6px);
+    pointer-events: none;
+  }
+  
+  /* Responsive tweaks for hero */
+  @media (max-width: 960px){
+    .hero-inner{
+      grid-template-columns: 1fr;
+      gap: 28px;
+      padding-top: 48px;
+    }
+    .hero-media{ justify-content: flex-start; }
+    .photo-card img{ width: min(680px, 100%); }
+  }
+  
+  /* ===========================
+     Team v1 (kept for reference)
+     =========================== */
+  .team-header {
+    text-align: center;
+    margin: 36px auto 22px;
+  }
+  
+  .eyebrow {
+    color: #10b981;            /* green */
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .team-title {
+    font-size: clamp(22px, 3.2vw, 32px);
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 6px;
+  }
+  
+  .team-subtext {
+    color: #6b7280;
+    font-size: 16px;
+  }
+  
+  .team-grid {
+    margin: 28px auto 64px;
+    max-width: 760px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px 44px;
+    justify-items: center;
+  }
+  
+  .member-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .member-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+    background: #fff;
+    margin-bottom: 10px;
+  }
+  .member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .member-name {
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 4px;
+  }
+  
+  .member-role {
+    color: #6b7280;
+    font-size: 14px;
+  }
+  
+  /* stack gracefully on small screens */
+  @media (max-width: 640px) {
+    .team-grid {
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+  }
+  
+  /* ===========================
+     Team v2 (overlay cards)
+     =========================== */
+  .teamv2 {
+    background: #fbfaf6; /* soft cream like screenshot */
+    border-radius: 24px;
+    padding-top: 36px;
+    padding-bottom: 64px;
+  }
+  
+  .teamv2-head {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  .teamv2-eyebrow {
+    color: #10b981;
+    font-weight: 800;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .teamv2-title {
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 900;
+    color: #0f172a;
+    margin: 0 0 6px;
+  }
+  .teamv2-sub {
+    color: #6b7280;
+    margin: 0;
+  }
+  
+  /* one row of three; wraps on small screens */
+  .teamv2-row {
+    max-width: 1200px;
+    margin: 40px auto 80px;
+    padding: 0 16px;
+  
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  
+    justify-items: center;
+    align-items: start;
+  }
+  
+  /* Keep layout responsive — 2 cols on tablet, 1 on mobile */
+  @media (max-width: 900px) {
+    .teamv2-row {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 640px) {
+    .teamv2-row {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* card */
+  .teamv2-card {
+    position: relative;
+    width: clamp(160px, 28vw, 260px);
+    aspect-ratio: 4 / 5;
+    border-radius: 28px;
+    overflow: hidden;
+    margin: 0;
+    background: #fff;
+    box-shadow: 0 16px 40px rgba(2, 6, 23, 0.1);
+    transition: transform 180ms ease, box-shadow 180ms ease;
+  }
+  .teamv2-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 60px rgba(2, 6, 23, 0.14);
+  }
+  
+  /* photo fills */
+  .teamv2-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* bottom overlay with rounded top corners (pill look) */
+  .teamv2-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  
+    padding: 22px 20px 18px;
+    color: #fff;
+  
+    background:
+      linear-gradient(
+        180deg,
+        rgba(17, 24, 39, 0.0) 0%,
+        rgba(17, 24, 39, 0.35) 24%,
+        rgba(17, 24, 39, 0.55) 55%,
+        rgba(17, 24, 39, 0.7) 100%
+      );
+  
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+  
+    /* create the "rounded blob" silhouette */
+    -webkit-mask-image: linear-gradient(to top, black 85%, transparent 100%);
+            mask-image: linear-gradient(to top, black 85%, transparent 100%);
+  }
+  
+  /* text inside overlay */
+  .teamv2-name {
+    font-weight: 900;
+    font-size: clamp(20px, 2.2vw, 32px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+    word-break: break-word;
+  }
+  .teamv2-role {
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.9);
+    text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+  }
+  
