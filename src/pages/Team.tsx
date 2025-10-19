@@ -19,6 +19,7 @@ const members = [
 
 export default function Team() {
   return (
+  <section>
     <section className="section teamv2">
       <div className="teamv2-head">
         <div className="teamv2-eyebrow">Who We Are</div>
@@ -36,6 +37,16 @@ export default function Team() {
           </figure>
         ))}
       </div>
+      
+      </section>
+      {/* FOOTER */}
+      <footer className="site-footer">
+        <div className="footer-inner">
+          <div className="footer-brand">STITCH</div>
+          <div className="footer-copy">Copyright CS 147</div>
+        </div>
+      </footer>
     </section>
+    
   );
 }

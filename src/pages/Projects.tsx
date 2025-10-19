@@ -134,6 +134,14 @@ export default function Projects() {
           </article>
         ))}
       </div>
+      {/* FOOTER */}
+      <footer className="site-footer">
+        <div className="footer-inner">
+          <div className="footer-brand">STITCH</div>
+          <div className="footer-copy">Copyright CS 147</div>
+        </div>
+      </footer>
     </section>
+    
   );
 }
