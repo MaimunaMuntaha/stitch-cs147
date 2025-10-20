@@ -6,15 +6,16 @@ type Project = {
   pdf?: string;
   pptx?: string;
 };
-
+import heroImg from "../assets/needfinding.png";
+import needfindingpptx from "../assets/file/needfinding.pdf";
 const projects: Project[] = [
   {
     title: "Needfinding",
     blurb:
       "This presentation covers our needfinding interviews to explore the problem space of making and maintaining healthy friendships. We uncovered emotions, pain points, and individual journeys of several interviewees.",
-    img: "https://images.unsplash.com/photo-1555400038-63f5ba517a47?q=80&w=1600&auto=format&fit=crop",
-    pdf: "#",
-    pptx: "#",
+      img: heroImg,
+    pdf: needfindingpptx,
+    pptx: "https://docs.google.com/presentation/d/14mTuNBSAxF_zb3A1ALIWDPT5UeRCrEOAbeUg39zkjrk/edit?usp=sharing",
   },
   {
     title: "Experience Prototypes",
@@ -22,7 +23,7 @@ const projects: Project[] = [
       "We refined our problem with Point of View statements and generated solutions using How Might We prompts. Then we prototyped the ideas behind our solutions.",
     img: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1600&auto=format&fit=crop",
     pdf: "#",
-    pptx: "#",
+    pptx: "https://docs.google.com/presentation/d/1s8SHX_G_3J-Ng0z3SfqunXdN2g_YhcZ9KFcknWjOJmA/edit?usp=sharing",
   },
   {
     title: "Concept Video",
@@ -95,7 +96,7 @@ export default function Projects() {
     <section className="projects-section">
       <header className="projects-head">
         <h1>Projects</h1>
-        <p>Come along and learn about the journey we took to develop Playdate.</p>
+        <p>Follow our design and thinking process while building Stitch.</p>
       </header>
 
       <div className="projects-grid">

@@ -1,4 +1,4 @@
-import heroImg from "../assets/react.svg"; // temp; swap with src/assets/hero.jpg
+import heroImg from "../assets/stitch.jpeg"; // temp; swap with src/assets/hero.jpg
 
 export default function Home() {
   return (
