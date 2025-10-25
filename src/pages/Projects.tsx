@@ -8,94 +8,91 @@ type Project = {
 };
 import heroImg from "../assets/needfinding.png";
 import needfindingpptx from "../assets/file/needfinding.pdf";
+import a5 from "../assets/a5.png";
+import experience from "../assets/experience.png";
+import a2pdf from "../assets/file/a2.pdf";
+import a5pdf from "../assets/file/a5.pdf";
+import a4pdf from "../assets/file/a4.pdf";
 const projects: Project[] = [
   {
-    title: "Needfinding",
+    title: "A1: Needfinding",
     blurb:
-      "This presentation covers our needfinding interviews to explore the problem space of making and maintaining healthy friendships. We uncovered emotions, pain points, and individual journeys of several interviewees.",
+      "We interviewed 7 small business owners/employees/shoppers to see their rationale for how they shop.",
       img: heroImg,
     pdf: needfindingpptx,
     pptx: "https://docs.google.com/presentation/d/14mTuNBSAxF_zb3A1ALIWDPT5UeRCrEOAbeUg39zkjrk/edit?usp=sharing",
   },
   {
-    title: "Experience Prototypes",
+    title: "A2: POVs and Experience Prototypes",
     blurb:
       "We refined our problem with Point of View statements and generated solutions using How Might We prompts. Then we prototyped the ideas behind our solutions.",
-    img: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1600&auto=format&fit=crop",
-    pdf: "#",
+    img: experience,
+    pdf: a2pdf, 
     pptx: "https://docs.google.com/presentation/d/1s8SHX_G_3J-Ng0z3SfqunXdN2g_YhcZ9KFcknWjOJmA/edit?usp=sharing",
   },
   {
-    title: "Concept Video",
+    title: "A4: Concept Video",
     blurb:
       "A short concept video that communicates our vision and key interaction moments.",
-    videoEmbed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    pdf: "#",
-    pptx: "#",
+    videoEmbed: "https://www.youtube.com/embed/GeFFo-6EKmE",
+    pdf: a4pdf,
+    pptx: "https://docs.google.com/presentation/d/1skKN9pDN2HrmkZd3-32T2O6-uQZTQOi6UpuxCLyflYQ/edit?usp=sharing",
+     
   },
   {
-    title: "Lo-Fi Wireframes",
+    title: "A5: Lo-Fi Wireframes",
     blurb:
       "Low-fidelity screens to map flows and validate key tasks before investing in visuals.",
-    img: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1600&auto=format&fit=crop",
+    img:a5,
+    pdf: a5pdf,
+    pptx: "https://docs.google.com/presentation/d/1dfrfNJ_ENfkONvKOP-xsbO_bJ1eA7WE0NX48ISvEz4s/edit?usp=sharing",
+  },
+  {
+    title: "A6: Medium-fi Prototype",
+    blurb:
+      "TBD: Our medium fidelity, interactive prototypes.",
+      videoEmbed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    pptx: "#",
+  },
+  {
+    title: "A7: Heuristic Evaluation",
+    blurb:
+      "TBD.",
+      videoEmbed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     pdf: "#",
     pptx: "#",
   },
   {
-    title: "Diary Study",
+    title: "A8: High-fi Prototype",
     blurb:
-      "A one-week diary study to observe planning habits and friction points in the wild.",
-    img: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1600&auto=format&fit=crop",
+      "TBD.",
+      videoEmbed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     pdf: "#",
     pptx: "#",
   },
   {
-    title: "Research Synthesis",
+    title: "A9: HE Summary",
     blurb:
-      "Affinity clusters, key insights, and opportunity areas derived from interviews and observations.",
-    img: "https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=1600&auto=format&fit=crop",
+      "TBD",
+      videoEmbed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     pdf: "#",
     pptx: "#",
   },
   {
-    title: "Interaction Design",
+    title: "A10: Poster & Pitch",
     blurb:
-      "Core interactions prototyped to validate timing, affordances, and feedback.",
-    img: "https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?q=80&w=1600&auto=format&fit=crop",
+      "TBD.",
+      videoEmbed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     pdf: "#",
     pptx: "#",
-  },
-  {
-    title: "Visual System",
-    blurb:
-      "Typography, color, and components that bring a playful but accessible tone.",
-    img: "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1600&auto=format&fit=crop",
-    pdf: "#",
-    pptx: "#",
-  },
-  {
-    title: "Usability Testing",
-    blurb:
-      "Structured usability sessions with tasks, SUS scores, and qualitative feedback.",
-    img: "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1600&auto=format&fit=crop",
-    pdf: "#",
-    pptx: "#",
-  },
-  {
-    title: "Final Presentation",
-    blurb:
-      "End-to-end story of the Playdate journey, findings, and what’s next.",
-    img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop",
-    pdf: "#",
-    pptx: "#",
-  },
+  },  
 ];
 
 export default function Projects() {
   return (
     <section className="projects-section">
       <header className="projects-head">
-        <h1>Projects</h1>
+        <h1>Design Process</h1>
         <p>Follow our design and thinking process while building Stitch.</p>
       </header>
 

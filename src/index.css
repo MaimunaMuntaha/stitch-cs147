@@ -8,12 +8,21 @@
   --brand-yellow: #f9cf00;
   --brand-green: #34c759;
   --brand-blue: #3b82f6;
-  --font-body: "Inter", system-ui, sans-serif;
-  --font-display: "Montserrat", sans-serif;
+
+  /* ⬇️ Use Satoshi everywhere */
+  --font-body: "Satoshi", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-display: "Satoshi", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 
   --radius: 18px;
   --shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
 }
+h1, h2, h3 {
+  margin: 0 0 12px;
+  line-height: 1.15;
+  font-family: var(--font-display);   /* ⬅️ new */
+  letter-spacing: -0.02em;            /* nicer Satoshi tracking */
+}
+
 
 * { box-sizing: border-box; }
 html, body, #root { height: 100%; }

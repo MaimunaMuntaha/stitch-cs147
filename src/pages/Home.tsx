@@ -1,4 +1,8 @@
-import heroImg from "../assets/stitch.jpeg"; // temp; swap with src/assets/hero.jpg
+import heroImg from "../assets/stitch.jpeg";
+import home from "../assets/home.png";
+import msg from "../assets/msg.png";
+import comm from "../assets/comm.png";
+import stitchLogo from "../assets/stitch.png"; // ← import your logo
 
 export default function Home() {
   return (
@@ -9,19 +13,26 @@ export default function Home() {
         <div className="hero-inner">
           <div className="hero-text">
             <h1>
-              Stitch
+            <img
+    src={stitchLogo}
+    alt="Stitch logo"
+    style={{
+      height: "180px",     // ⬅️ increase this to make it much bigger
+      maxWidth: "100%",
+      objectFit: "contain",
+      marginBottom: "10px",
+    }}
+  />
               <br />
               small businesses together through community events.
             </h1>
             <p className="lead">
-              We create smarter, warmer connections between local businesses and
-              communities by turning collaborations into repeatable, real-world
-              experiences.
+              Stitch supports small businesses by connecting them with each
+              other, and with their local communities through co-hosted events.
             </p>
             <p>
-              Stitch helps merchants discover partners, co-host events, and
-              co-market offerings—then turns those matches into concrete plans
-              with timelines and lightweight tools.
+              Stitch strengthens communities built by small businesses and turns
+              community gatherings into engines of shared success.
             </p>
           </div>
 
@@ -33,35 +44,37 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* ABOUT */}
       <section className="section about">
         <div className="about-inner">
           <div className="about-copy">
             <h2>About</h2>
             <p>
-              Stitch is a platform that pairs small businesses with each other
-              and with local organizations to co-create events that benefit the
-              whole neighborhood. Our approach blends{" "}
-              <strong>matching intelligence</strong> with{" "}
-              <strong>lightweight planning</strong> so teams move from idea →
-              event → impact quickly.
+            New small businesses are trying to establish themselves. 
+Old small businesses are trying to keep up with the changing times. 
+For all small businesses, finding support, adapting to a new generation, and creating community has been difficult.
+
+{" "}{" "}
+              <strong>STITCH uses an AI matching algorithm to allow small businesses to collaborate on events to attract new customers. </strong>  {" "}
+             
             </p>
             <ul className="about-points">
-              <li>AI-assisted partner matching based on goals & audiences</li>
-              <li>Event concepts you can adopt or remix in one click</li>
-              <li>Simple task timelines that keep momentum</li>
+              <li>AI-toggle button: On if you want to get matched with other businesses and given potential event ideas or AI off if you want a regular feed. </li>
+              <li>Stitch tab lets businesses co-host events</li>
+              <li>Communities tab lets businesses find events in the community. </li>
             </ul>
           </div>
 
           <div className="about-side">
             <div className="about-card">
               <div className="about-stat">
-                <span className="big">3×</span>
-                <span>faster to co-host your next event</span>
+                <span className="big">9/10</span>
+                <span>Average User Eagerness during Low-fi User Testing </span>
               </div>
               <div className="about-stat">
-                <span className="big">+42%</span>
-                <span>avg. lift in foot traffic during pilots</span>
+                <span className="big">8.25/10                 </span>
+                <span>Ease of Navigation according to User Testers </span>
               </div>
             </div>
           </div>
@@ -80,8 +93,7 @@ export default function Home() {
           <div
             className="iphone-tilt"
             style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?q=80&w=1200&auto=format&fit=crop')",
+              backgroundImage: `url(${home})`,
             }}
             aria-label="Prototype: Matching"
           />
@@ -89,7 +101,7 @@ export default function Home() {
             className="iphone-tilt"
             style={{
               backgroundImage:
-                "url('https://images.unsplash.com/photo-1558655146-9f40138edfeb?q=80&w=1200&auto=format&fit=crop')",
+              `url(${msg})`,
             }}
             aria-label="Prototype: Event Concepts"
           />
@@ -97,71 +109,13 @@ export default function Home() {
             className="iphone-tilt"
             style={{
               backgroundImage:
-                "url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1200&auto=format&fit=crop')",
+                `url(${comm})`,
             }}
             aria-label="Prototype: Timeline"
           />
         </div>
  
-      </section>
-
-      {/* PROCESS / ROADMAP */}
-      <section className="section process">
-        <header className="section-head">
-          <h2>Process</h2>
-          <p>How we got from insight to a shareable story.</p>
-        </header>
-
-        <ol className="roadmap">
-          <li>
-            <h3>Needfinding</h3>
-            <p>
-              Interviews with merchants & community groups to map goals,
-              constraints, and collaboration friction.
-            </p>
-          </li>
-          <li>
-            <h3>POVs & Experience Prototypes</h3>
-            <p>
-              Point-of-View statements and “How Might We” prompts led to quick
-              experience sketches we could test.
-            </p>
-          </li>
-          <li>
-            <h3>Concept Video</h3>
-            <p>A short narrative to communicate the vision and core value.</p>
-          </li>
-          <li>
-            <h3>Lo-fi Prototype</h3>
-            <p>
-              Storyboards & simple click-throughs to validate flows and scope.
-            </p>
-          </li>
-          <li>
-            <h3>Medium-fi Prototype</h3>
-            <p>Refined flows & interaction details from early feedback.</p>
-          </li>
-          <li>
-            <h3>Heuristic Evaluation</h3>
-            <p>
-              Applied Nielsen’s heuristics; peers flagged clarity & affordance
-              issues, feeding fixes.
-            </p>
-          </li>
-          <li>
-            <h3>Hi-fi Prototype</h3>
-            <p>
-              Polished visuals and micro-interactions; demo video and live
-              prototype.
-            </p>
-          </li>
-          <li>
-            <h3>Poster & Pitch</h3>
-            <p>Final artifacts to summarize the journey and results.</p>
-          </li>
-        </ol>
-      </section>
-
+      </section> 
       {/* FOOTER */}
       <footer className="site-footer">
         <div className="footer-inner">

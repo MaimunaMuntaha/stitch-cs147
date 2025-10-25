@@ -90,11 +90,13 @@
   }
   
   .hero-text h1{
-    font-size: clamp(28px, 4vw, 44px);
+    font-size: clamp(32px, 5vw, 56px);  /* a bit larger for Satoshi */
     font-weight: 800;
     color: #111827;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;           /* slightly tighter */
+    line-height: 1.08;                  /* more display-like */
   }
+  
   .hero-text .lead{
     font-size: 17px;
     color: #4b5563;

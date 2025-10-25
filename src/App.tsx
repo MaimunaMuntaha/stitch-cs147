@@ -4,6 +4,7 @@ import Projects from "./pages/Projects";
 import Team from "./pages/Team";
 import "./App.css";
 import CustomCursor from "./components/CustomCursor";
+import stitchLogo from "./assets/stitch.png"; // ✅ add this import
 
 export default function App() {
   return (
@@ -11,18 +12,45 @@ export default function App() {
       <CustomCursor />
       <header className="site-header">
         <div className="nav-wrap">
+          {/* Replace text logo with image */}
           <div className="brand">
-            <span className="p">s</span>
-            <span className="l">t</span>
-            <span className="a">i</span>
-            <span className="y">t</span>
-            <span className="d">c</span>
-            <span className="a2">h</span> 
+            <img
+              src={stitchLogo}
+              alt="Stitch logo"
+              style={{
+                height: "48px",       // adjust for your design
+                width: "auto",
+                display: "block",
+              }}
+            />
           </div>
+
           <nav className="nav-links">
-            <NavLink to="/" end className={({isActive}) => isActive ? "link active" : "link"}>Home</NavLink>
-            <NavLink to="/projects" className={({isActive}) => isActive ? "link active" : "link"}>Projects</NavLink>
-            <NavLink to="/team" className={({isActive}) => isActive ? "link active" : "link"}>Team</NavLink>
+            <NavLink
+              to="/"
+              end
+              className={({ isActive }) =>
+                isActive ? "link active" : "link"
+              }
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/projects"
+              className={({ isActive }) =>
+                isActive ? "link active" : "link"
+              }
+            >
+              Projects
+            </NavLink>
+            <NavLink
+              to="/team"
+              className={({ isActive }) =>
+                isActive ? "link active" : "link"
+              }
+            >
+              Team
+            </NavLink>
           </nav>
         </div>
       </header>
