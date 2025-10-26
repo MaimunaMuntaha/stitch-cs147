@@ -645,3 +645,169 @@
   font-weight: 900; letter-spacing: 2px; font-size: 18px; color: #0f172a;
 }
 .footer-copy { color:#6b7280; }
+/* ===========================
+   3D Cube Tabs
+   =========================== */
+
+/* Give each link a 3D stage */
+.link {
+  perspective: 700px;                 /* stage for 3D */
+  --cube-depth: 12px;                 /* thickness of the cube */
+  --cube-radius: 10px;                /* matches your pill radius */
+  --cube-bg: rgba(17,24,39,0.06);     /* base */
+  --cube-bg-active: rgba(17,24,39,0.10);
+}
+
+/* Remove the old pill hover background (cube handles it) */
+.link:hover {
+  background-color: transparent;
+  transform: none;
+}
+
+/* Keep the active "pill" feel behind the cube for clarity */
+.link.active {
+  background-color: transparent;
+}
+
+/* The cube wrapper */
+.cube {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  min-width: 84px;                    /* keeps width steady during rotation */
+  height: 36px;                       /* tab height */
+  padding: 0 2px;
+  transform-style: preserve-3d;
+  transition: transform 420ms cubic-bezier(.2,.8,.2,1);
+}
+
+/* Each face of the cube */
+.cube .face {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  color: #111827;
+  border-radius: var(--cube-radius);
+  box-shadow: 0 8px 20px rgba(2,6,23,0.08);
+  background: #fff;                   /* front is white */
+  padding: 0 10px;                    /* matches your .link padding */
+}
+
+/* FRONT face */
+.cube .front {
+  transform: translateZ(var(--cube-depth));
+  background: #ffffff;
+  box-shadow:
+    inset 0 0 0 1px rgba(0,0,0,0.04),
+    0 10px 24px rgba(2,6,23,0.08);
+}
+
+/* TOP face (visible when rotating up) */
+.cube .top {
+  transform: rotateX(90deg) translateZ(var(--cube-depth));
+  transform-origin: center center;
+  background: var(--cube-bg);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+}
+
+/* RIGHT face (visible when rotating right) */
+.cube .right {
+  transform: rotateY(90deg) translateZ(var(--cube-depth));
+  transform-origin: center center;
+  background: var(--cube-bg);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+}
+
+/* Hover interaction: tilt up a bit + right a bit for a lively spin */
+.link:hover .cube {
+  transform: rotateX(-88deg) rotateY(10deg);
+}
+
+/* Active route: show a subtle right turn so active feels "locked" */
+.link.active .cube {
+  transform: rotateY(90deg);
+}
+
+/* Keyboard focus: keep accessibility crisp */
+.link:focus-visible .cube .front {
+  outline: 2px solid #111827;
+  outline-offset: 2px;
+  border-radius: var(--cube-radius);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .cube {
+    transition: none;
+  }
+  .link:hover .cube,
+  .link.active .cube {
+    transform: none;
+  }
+}
+/* Hide the mirrored back side so text never appears upside down */
+.cube .face {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Keep the active tab readable: no rotation, just a subtle "selected" look */
+.link.active .cube {
+  transform: none; /* show front face */
+}
+
+/* Give the active tab a gentle filled style so it still looks selected */
+.link.active .cube .front {
+  background: rgba(17,24,39,0.10);
+  box-shadow:
+    inset 0 0 0 1px rgba(0,0,0,0.05),
+    0 10px 24px rgba(2,6,23,0.08);
+}
+
+/* Optional: tone down the base link's background so the cube owns the style */
+.link.active {
+  background: transparent;
+}
+.link:hover {
+  background: transparent;
+  transform: none;
+}
+/* ===== Active tab: gray -> light pink ===== */
+:root {
+  --tab-gray: #f3f4f6;   /* light gray */
+  --tab-pink: #fde2e8;   /* light pink */
+}
+
+/* default (idle) tab face is gray */
+.cube .front {
+  background: var(--tab-gray) !important;
+  transition: background-color .25s ease, box-shadow .25s ease, color .25s ease;
+}
+
+/* active route: fade to light pink + soft pink glow */
+.link.active .cube .front {
+  background: var(--tab-pink) !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(236,72,153,0.25),
+    0 10px 24px rgba(236,72,153,0.22) !important;
+}
+
+/* keep hover handled by the cube (no extra pill bg) */
+.link,
+.link:hover,
+.link.active {
+  background: transparent !important;
+}
+
+/* still hide mirrored back sides (no upside-down text) */
+.cube .face {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* keep active tab readable (front face showing) */
+.link.active .cube {
+  transform: none;
+}

@@ -26,32 +26,41 @@ export default function App() {
           </div>
 
           <nav className="nav-links">
-            <NavLink
-              to="/"
-              end
-              className={({ isActive }) =>
-                isActive ? "link active" : "link"
-              }
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/projects"
-              className={({ isActive }) =>
-                isActive ? "link active" : "link"
-              }
-            >
-              Projects
-            </NavLink>
-            <NavLink
-              to="/team"
-              className={({ isActive }) =>
-                isActive ? "link active" : "link"
-              }
-            >
-              Team
-            </NavLink>
-          </nav>
+  <NavLink
+    to="/"
+    end
+    className={({ isActive }) => (isActive ? "link active" : "link")}
+  >
+    <span className="cube">
+      <span className="face front">Home</span>
+      <span className="face top">Home</span>
+      <span className="face right">Home</span>
+    </span>
+  </NavLink>
+
+  <NavLink
+    to="/projects"
+    className={({ isActive }) => (isActive ? "link active" : "link")}
+  >
+    <span className="cube">
+      <span className="face front">Projects</span>
+      <span className="face top">Projects</span>
+      <span className="face right">Projects</span>
+    </span>
+  </NavLink>
+
+  <NavLink
+    to="/team"
+    className={({ isActive }) => (isActive ? "link active" : "link")}
+  >
+    <span className="cube">
+      <span className="face front">Team</span>
+      <span className="face top">Team</span>
+      <span className="face right">Team</span>
+    </span>
+  </NavLink>
+</nav>
+
         </div>
       </header>
 
