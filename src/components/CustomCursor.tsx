@@ -40,8 +40,8 @@ export default function CustomCursor() {
         position: "fixed",
         top: position.y,
         left: position.x,
-        width: hovering ? "60px" : "40px", // grows on hover
-        height: hovering ? "60px" : "40px",
+        width: hovering ? "80px" : "50px", // grows on hover
+        height: hovering ? "80px" : "50px",
         borderRadius: "50%",
         border: "2px solid black",
         backgroundColor: "transparent",
