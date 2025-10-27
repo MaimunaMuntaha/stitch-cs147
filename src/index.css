@@ -1,15 +1,23 @@
 :root{
-  --bg: #ffffff;
-  --text: #111827;
-  --muted: #6b7280;
-  --border: #e5e7eb;
+  /* --- Palette --- */
+  --c-beige: #D8E0CF;     /* Beige */
+  --c-floral: #F9F6EF;    /* Floral white */
+  --c-lion: #A79174;      /* Lion */
+  --c-bone: #ECE3D1;      /* Bone */
+  --c-reseda: #7C8C6A;    /* Reseda green */
 
-  --brand-red: #ff5a5f;
-  --brand-yellow: #f9cf00;
-  --brand-green: #34c759;
-  --brand-blue: #3b82f6;
+  /* --- App tokens using the palette --- */
+  --bg: var(--c-floral);
+  --text: #1f2937;                     /* neutral readable text */
+  --muted: #6f6a5f;                    /* softened neutral w/ a lion tint */
+  --border: #e4dfd5;                   /* light bone border */
 
-  /* ⬇️ Use Satoshi everywhere */
+  /* used by the multicolor brand letters */
+  --brand-red: var(--c-lion);
+  --brand-yellow: var(--c-bone);
+  --brand-green: var(--c-reseda);
+  --brand-blue: var(--c-beige);
+
   --font-body: "Satoshi", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --font-display: "Satoshi", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 
@@ -19,16 +27,13 @@
 h1, h2, h3 {
   margin: 0 0 12px;
   line-height: 1.15;
-  font-family: var(--font-display);   /* ⬅️ new */
-  letter-spacing: -0.02em;            /* nicer Satoshi tracking */
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
 }
-
 
 * { box-sizing: border-box; }
 html, body, #root { height: 100%; }
-body, * {
-  cursor: none !important;
-}
+body, * { cursor: none !important; }
 
 body {
   margin: 0;
@@ -41,3 +46,21 @@ body {
 h1,h2,h3 { margin: 0 0 12px; line-height: 1.15; }
 p { margin: 0 0 12px; color: var(--muted); font-size: 16px; }
 .section { max-width: 1040px; margin: 56px auto; padding: 0 20px; }
+/* FINAL OVERRIDE — kill any blue fill or blend on the custom cursor */
+#cursor,
+.cursor,
+.cursor-dot {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 2px solid #000 !important;
+  mix-blend-mode: normal !important;
+  filter: none !important;
+}
+
+/* If JS was setting inline styles, this helps reset them via a class */
+#cursor.blue,
+.cursor.blue,
+.cursor-dot.blue {
+  background: transparent !important;
+  box-shadow: none !important;
+}

@@ -127,22 +127,7 @@
   }
   
   /* soft pastel background blob like the screenshot */
-  .hero-bg-blob{
-    position: absolute;
-    right: -10%;
-    top: 10%;
-    width: 60vw; height: 60vw;
-    max-width: 900px; max-height: 900px;
-    border-radius: 50%;
-    background:
-      radial-gradient(50% 50% at 50% 50%,
-        rgba(59,130,246,0.18) 0%,
-        rgba(59,130,246,0.10) 40%,
-        rgba(236,72,153,0.10) 70%,
-        rgba(255,255,255,0) 75%);
-    filter: blur(6px);
-    pointer-events: none;
-  }
+
   
   /* Responsive tweaks for hero */
   @media (max-width: 960px){
@@ -810,4 +795,508 @@
 /* keep active tab readable (front face showing) */
 .link.active .cube {
   transform: none;
+}
+/* Header / Navigation */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--c-floral) 92%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-links { display:flex; gap:24px; align-items:center; }
+
+/* Links */
+.link,
+.link:link,
+.link:visited {
+  position: relative;
+  display: inline-block;
+  padding: 6px 10px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 10px;
+  transition: background-color .18s ease, color .18s ease, transform .18s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.link:hover {
+  background-color: rgba(124,140,106,0.12);  /* reseda hover */
+  color: var(--text);
+  transform: translateY(-1px);
+}
+.link.active {
+  font-weight: 600;
+  background-color: rgba(124,140,106,0.18);  /* active */
+  color: var(--text);
+}
+.link:focus-visible {
+  outline: 2px solid var(--c-reseda);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
+/* Hero */
+.hero-text h1 { color: var(--text); }
+.hero-text .lead{ color: var(--muted); }
+
+/* photo card */
+.photo-card{ background: var(--c-floral); }
+
+/* soft background blob in palette greens/beiges */
+
+
+/* Team headers */
+.eyebrow, .teamv2-eyebrow { color: var(--c-reseda); }
+.team-title, .teamv2-title { color: var(--text); }
+.team-subtext, .teamv2-sub { color: var(--muted); }
+
+/* Team v2 section background */
+.teamv2 { background: var(--c-bone); }
+
+/* Project cards */
+.project-card { background: #ffffff; }
+.project-title { color: #0f172a; }
+.project-blurb { color: var(--muted); }
+
+/* Pill buttons in Reseda */
+.pill-btn,
+.pill-btn:link,
+.pill-btn:visited {
+  background: var(--c-reseda);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(124,140,106,0.35);
+}
+.pill-btn:hover {
+  background: #6e7f5a; /* a touch darker than reseda */
+  box-shadow: 0 10px 26px rgba(110,127,90,0.38);
+}
+.pill-btn:active {
+  box-shadow: 0 6px 18px rgba(110,127,90,0.32);
+}
+
+/* About card tint */
+.about-side .about-card {
+  background: linear-gradient(180deg, #ffffff, var(--c-floral));
+  border: 1px solid var(--border);
+}
+.about p { color: var(--muted); }
+.about-stat .big { color:#0f172a; }
+
+/* Prototypes */
+.prototype-note { color: var(--muted); }
+
+/* Process band now deep Reseda with light text */
+.process {
+  background: var(--c-reseda);
+  color: var(--c-floral);
+  border-radius: 24px;
+  padding-bottom: 56px;
+  margin-top: 56px;
+}
+.process .section-head h2 { color: var(--c-floral); }
+.process .section-head p { color: color-mix(in srgb, var(--c-floral) 78%, black); }
+.roadmap li {
+  background: color-mix(in srgb, var(--c-floral) 8%, black);
+  border: 1px solid color-mix(in srgb, var(--c-floral) 16%, black);
+  box-shadow: 0 10px 28px rgba(15,23,42,0.18);
+}
+.roadmap li::before{
+  background: var(--c-lion);
+  color: var(--c-floral);
+  border: 2px solid var(--c-reseda);
+}
+.roadmap h3 { color: #ffffff; }
+.roadmap p { color: color-mix(in srgb, var(--c-floral) 85%, black); }
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--border);
+  margin-top: 64px;
+  background: linear-gradient(180deg, var(--c-bone), var(--c-floral));
+}
+.footer-brand { color: #0f172a; }
+.footer-copy { color: var(--muted); }
+
+/* 3D Cube Tabs — palette version */
+.link {
+  perspective: 700px;
+  --cube-depth: 12px;
+  --cube-radius: 10px;
+  --cube-bg: var(--c-beige);
+  --cube-bg-active: var(--c-bone);
+}
+/* disable old pill bg */
+.link:hover, .link.active { background: transparent; transform: none; }
+
+.cube { position:relative; display:inline-grid; place-items:center; min-width:84px; height:36px; padding:0 2px; transform-style:preserve-3d; transition: transform 420ms cubic-bezier(.2,.8,.2,1); }
+.cube .face {
+  position:absolute; inset:0; display:grid; place-items:center;
+  font-weight:600; color: var(--text);
+  border-radius: var(--cube-radius);
+  box-shadow: 0 8px 20px rgba(2,6,23,0.08);
+  background: #fff; padding:0 10px;
+  -webkit-backface-visibility:hidden; backface-visibility:hidden;
+}
+/* front face in Beige, active -> Bone with green glow */
+.cube .front {
+  transform: translateZ(var(--cube-depth));
+  background: var(--c-beige) !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(0,0,0,0.04),
+    0 10px 24px rgba(2,6,23,0.08);
+  transition: background-color .25s ease, box-shadow .25s ease, color .25s ease;
+}
+.link.active .cube .front {
+  background: var(--c-bone) !important;
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--c-reseda) 35%, transparent),
+    0 10px 24px rgba(124,140,106,0.22) !important;
+}
+
+/* top/right faces use soft Beige so the spin stays on brand */
+.cube .top   { transform: rotateX(90deg) translateZ(var(--cube-depth));  background: var(--cube-bg);  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05); }
+.cube .right { transform: rotateY(90deg) translateZ(var(--cube-depth));  background: var(--cube-bg);  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05); }
+
+/* motion + states */
+.link:hover .cube { transform: rotateX(-88deg) rotateY(10deg); }
+.link.active .cube { transform: none; } /* keep front readable */
+.link:focus-visible .cube .front { outline: 2px solid var(--c-reseda); outline-offset: 2px; border-radius: var(--cube-radius); }
+
+@media (prefers-reduced-motion: reduce) {
+  .cube { transition:none; }
+  .link:hover .cube, .link.active .cube { transform:none; }
+}
+/* Team v2 spacing tweaks */
+.section.teamv2 {
+  /* more white space inside the rounded box */
+  padding: 72px 48px 96px;   /* top / sides / bottom */
+  border-radius: 28px;       /* keep the nice pill look */
+  margin: 80px auto;         /* a bit more space outside the box too */
+}
+
+.teamv2-head {
+  margin-bottom: 36px;       /* more air between title and cards */
+}
+
+/* widen the internal gutters + card spacing */
+.teamv2-row {
+  max-width: 1160px;
+  margin: 0 auto 16px;
+  padding: 0 32px;           /* bigger side padding inside the box */
+  gap: 48px;                 /* more space between cards */
+}
+
+/* optional: on small screens, keep comfy padding */
+@media (max-width: 640px) {
+  .section.teamv2 { padding: 56px 22px 72px; }
+  .teamv2-row { padding: 0 12px; gap: 28px; }
+}
+/* Replace the soft blue blob with a crisp black outline circle */
+.hero-bg-blob {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: 2px solid #000;     /* black outline */
+  border-radius: 50%;
+  background: transparent;    /* no fill */
+  pointer-events: none;
+  animation: floatCircle 8s ease-in-out infinite alternate;
+}
+
+/* optional subtle movement */
+@keyframes floatCircle {
+  from { transform: translate(0, 0); opacity: 0.9; }
+  to   { transform: translate(8px, -10px); opacity: 1; }
+}
+/* --- Custom cursor: black outline circle --- */
+.cursor-dot,
+.cursor,
+#cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #000;     /* black ring */
+  border-radius: 50%;
+  background: transparent;    /* no fill */
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  mix-blend-mode: normal;
+  transition: transform .15s ease, opacity .15s ease;
+}
+
+/* ===========================
+   ONE source of truth for circles
+   =========================== */
+
+/* Custom cursor: black outline ring */
+.cursor-dot,
+.cursor,
+#cursor {
+  position: fixed;
+  left: 0; top: 0;
+  width: 18px; height: 18px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  background: transparent;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  mix-blend-mode: normal;
+  transition: transform .15s ease, opacity .15s ease;
+}
+
+/* Hero decorative circle: outline only, no glow/fill */
+.hero-bg-blob,
+.hero .blob,
+.hero .dot,
+.hero .bg-blob {
+  position: absolute;
+  width: 60px; height: 60px;
+  border: 2px solid #000 !important;
+  border-radius: 50%;
+  background: transparent !important;   /* kill blue fill */
+  box-shadow: none !important;
+  filter: none !important;
+  pointer-events: none;
+}
+
+/* If any pseudo-element was used to paint a blue dot, neutralize it */
+.hero-bg-blob::before,
+.hero-bg-blob::after,
+.hero .blob::before,
+.hero .blob::after,
+.hero .dot::before,
+.hero .dot::after {
+  content: none !important;
+}
+
+/* Optional float animation (kept subtle) */
+@keyframes floatCircle {
+  from { transform: translate(0, 0); opacity: .95; }
+  to   { transform: translate(8px, -10px); opacity: 1; }
+}
+.hero-bg-blob { animation: floatCircle 8s ease-in-out infinite alternate; }
+
+/* Safety: make sure no earlier duplicate rules override this */
+
+/* ===========================
+   CLEANUP: remove extra cube-tab theme
+   =========================== */
+/* If you still have the earlier "tab-gray/tab-pink" block,
+   delete it entirely. Keep only ONE cube-tabs theme in the file. */
+
+/* ===========================
+   ONE source of truth for circles/cursor
+   =========================== */
+
+/* Custom cursor: black outline ring */
+.cursor-dot,
+.cursor,
+#cursor {
+  position: fixed;
+  left: 0; top: 0;
+  width: 18px; height: 18px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  background: transparent;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  mix-blend-mode: normal;
+  transition: transform .15s ease, opacity .15s ease;
+}
+
+/* Hero decorative circle: force outline, no fill/shadows even if old styles exist */
+.hero-bg-blob,
+.hero .blob,
+.hero .dot,
+.hero .bg-blob {
+  position: absolute;
+  width: 60px; height: 60px;
+  border: 2px solid #000 !important;
+  border-radius: 50%;
+  background: transparent !important;
+  box-shadow: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  pointer-events: none;
+}
+
+/* Nuke any pseudo-elements that might be painting a blue circle */
+.hero-bg-blob::before,
+.hero-bg-blob::after,
+.hero .blob::before,
+.hero .blob::after,
+.hero .dot::before,
+.hero .dot::after,
+.hero .bg-blob::before,
+.hero .bg-blob::after {
+  content: none !important;
+}
+
+/* Optional gentle float */
+@keyframes floatCircleClean {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(8px, -10px); }
+}
+.hero-bg-blob { animation: floatCircleClean 8s ease-in-out infinite alternate; }
+/* ===========================
+   BLACK OUTLINE CURSOR + OUTLINE HERO CIRCLE
+   =========================== */
+
+/* Hide the default cursor (keep if you already do this elsewhere) */
+html, body { cursor: none; }
+
+/* The custom cursor ring
+   (Make sure you render <div id="cursor"></div> once in your app root) */
+#cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #000;        /* black outline */
+  border-radius: 50%;
+  background: transparent;       /* no fill */
+  pointer-events: none;          /* never block clicks */
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  mix-blend-mode: normal;
+  transition: transform .15s ease, opacity .15s ease;
+}
+
+/* Optional states you can toggle via JS (nice but not required) */
+#cursor.is-hidden { opacity: 0; }
+#cursor.is-hovering { transform: translate(-50%, -50%) scale(1.25); }
+
+/* Keep the pointer ring visible above sticky header blur effects */
+.site-header { position: sticky; z-index: 10; }
+#cursor { z-index: 9999; }
+
+/* ===========================
+   HERO “BLOB” -> BLACK OUTLINE CIRCLE
+   =========================== */
+.hero-bg-blob,
+.hero .blob,
+.hero .dot,
+.hero .bg-blob {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: 2px solid #000 !important;  /* force black outline */
+  border-radius: 50%;
+  background: transparent !important; /* kill any fills */
+  box-shadow: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  pointer-events: none;
+}
+
+/* Nuke any pseudo-elements that might paint a blue dot */
+.hero-bg-blob::before,
+.hero-bg-blob::after,
+.hero .blob::before,
+.hero .blob::after,
+.hero .dot::before,
+.hero .dot::after,
+.hero .bg-blob::before,
+.hero .bg-blob::after {
+  content: none !important;
+}
+
+/* Subtle float animation (optional) */
+@keyframes floatCircleClean {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(8px, -10px); }
+}
+.hero-bg-blob { animation: floatCircleClean 8s ease-in-out infinite alternate; }
+/* ===== FIRE DRILL: NUKE THE BLUE DOT IN HERO ===== */
+
+/* 1) Hide any decorative “blob/dot” element in the hero outright */
+.hero .hero-bg-blob,
+.hero .blob,
+.hero .dot,
+.hero .bg-blob,
+.hero [class*="blob"],
+.hero [class*="dot"] {
+  display: none !important;
+}
+
+/* 2) If the dot is painted via a pseudo-element, kill those too */
+.hero *::before,
+.hero *::after {
+  content: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  filter: none !important;
+}.hero img[src*="blob"],
+.hero img[src*="dot"] { display: none !important; }
+/* FINAL OVERRIDE — kill any blue fill or blend on the custom cursor */
+#cursor,
+.cursor,
+.cursor-dot {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 2px solid #000 !important;
+  mix-blend-mode: normal !important;
+  filter: none !important;
+}
+
+/* If JS was setting inline styles, this helps reset them via a class */
+#cursor.blue,
+.cursor.blue,
+.cursor-dot.blue {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+/* 1) Global: kill mobile blue tap highlight */
+* { -webkit-tap-highlight-color: transparent !important; }
+a, button { -webkit-tap-highlight-color: transparent !important; }
+
+/* 2) Cursor: force the black outline ring, no blue fill/glow */
+#cursor, .cursor, .cursor-dot {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 2px solid #000 !important;
+  mix-blend-mode: normal !important;
+  filter: none !important;
+  pointer-events: none !important;
+  width: 18px; height: 18px; border-radius: 50%;
+}
+
+/* 3) Safety: ensure no “pill” styles can ever bleed onto the cursor */
+#cursor.pill-btn, .cursor.pill-btn, .cursor-dot.pill-btn {
+  all: unset !important;
+  position: fixed !important;
+  left: 0; top: 0;
+  width: 18px; height: 18px;
+  border: 2px solid #000; border-radius: 50%;
+  pointer-events: none; transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+/* If the cursor is an SVG, kill blue fills/strokes and enforce black ring */
+#cursor svg, #cursor * {
+  fill: transparent !important;
+  stroke: #000 !important;
+  stroke-width: 2 !important;
+  filter: none !important;
+  box-shadow: none !important;
+  mix-blend-mode: normal !important;
+}
+
+/* If someone set a bitmap cursor, reset it */
+html, body, * { cursor: none !important; }
+
+/* Belt-and-suspenders for any accidental utility classes on the cursor */
+#cursor[class] {
+  background: transparent !important;
+  box-shadow: none !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
 }

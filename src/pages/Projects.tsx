@@ -1,8 +1,8 @@
 type Project = {
   title: string;
   blurb: string;
-  img?: string;         // use for image cards
-  videoEmbed?: string;  // use for YouTube/Vimeo embeds
+  img?: string;          
+  videoEmbed?: string;   
   pdf?: string;
   pptx?: string;
 };

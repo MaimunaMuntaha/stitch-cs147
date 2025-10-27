@@ -1,15 +1,6 @@
-// src/pages/Team.tsx
 import eva from "../assets/eva.jpg";
 import maimuna from "../assets/maimuna.jpg";
 import sunny from "../assets/sunny.jpg";
-
-
-
-type Member = {
-  name: string;
-  role: string;
-  img: string; // temporary stock; swap for local assets later
-};
 
 const members = [
   { name: "Eva Moraa Tom", role: "Software Engineer", img: eva },

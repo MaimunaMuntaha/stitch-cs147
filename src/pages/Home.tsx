@@ -17,7 +17,7 @@ export default function Home() {
     src={stitchLogo}
     alt="Stitch logo"
     style={{
-      height: "180px",     // ⬅️ increase this to make it much bigger
+      height: "180px",      
       maxWidth: "100%",
       objectFit: "contain",
       marginBottom: "10px",
