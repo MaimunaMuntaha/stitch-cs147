@@ -51,9 +51,9 @@ export default function Home() {
           <div className="about-copy">
             <h2>About</h2>
             <p>
-            New small businesses are trying to establish themselves. 
-Old small businesses are trying to keep up with the changing times. 
-For all small businesses, finding support, adapting to a new generation, and creating community has been difficult.
+            New small businesses are trying to establish themselves, while old small businesses are trying to keep up with the changing times. 
+
+<strong> For all small businesses, </strong>  finding support, adapting to a new generation, and creating community has been difficult.
 
 {" "}{" "}
               <strong>STITCH uses an AI matching algorithm to allow small businesses to collaborate on events to attract new customers. </strong>  {" "}
