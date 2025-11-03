@@ -9,10 +9,12 @@ type Project = {
 import heroImg from "../assets/needfinding.png";
 import needfindingpptx from "../assets/file/needfinding.pdf";
 import a5 from "../assets/a5.png";
+import a6 from "../assets/a6.png";
 import experience from "../assets/experience.png";
 import a2pdf from "../assets/file/a2.pdf";
 import a5pdf from "../assets/file/a5.pdf";
 import a4pdf from "../assets/file/a4.pdf";
+import a6pdf from "../assets/file/a6.pdf";
 const projects: Project[] = [
   {
     title: "A1: Needfinding",
@@ -50,9 +52,11 @@ const projects: Project[] = [
   {
     title: "A6: Medium-fi Prototype",
     blurb:
-      "TBD: Our medium fidelity, interactive prototypes.",
-      videoEmbed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    pptx: "#",
+      "Our medium fidelity, interactive prototypes on Figma",
+      img:a6,
+
+      pdf: a6pdf,
+    pptx: "https://www.canva.com/design/DAG3AXua7BI/V5wCxYEe-Wtb5S7Ig8ZTFw/view?utm_content=DAG3AXua7BI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3088b10a42",
   },
   {
     title: "A7: Heuristic Evaluation",
