@@ -4,6 +4,9 @@ import msg from "../assets/msg.png";
 import comm from "../assets/comm.png";
 import stitchLogo from "../assets/stitch.png"; // ← import your logo
 
+const FIGMA_URL =
+  "https://www.figma.com/proto/ARrTEwUiCxvuIFAGOPhEXB/CS147-Med-Fi-Stitch?page-id=0%3A1&node-id=326-5912&viewport=452%2C187%2C0.09&t=iCXGj0zTgU5ueqCq-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=326%3A5912";
+
 export default function Home() {
   return (
     <>
@@ -13,16 +16,16 @@ export default function Home() {
         <div className="hero-inner">
           <div className="hero-text">
             <h1>
-            <img
-    src={stitchLogo}
-    alt="Stitch logo"
-    style={{
-      height: "300px",      
-      maxWidth: "100%",
-      objectFit: "contain",
-      marginBottom: "10px",
-    }}
-  />
+              <img
+                src={stitchLogo}
+                alt="Stitch logo"
+                style={{
+                  height: "300px",
+                  maxWidth: "100%",
+                  objectFit: "contain",
+                  marginBottom: "10px",
+                }}
+              />
               <br />
               small businesses together through community events.
             </h1>
@@ -44,23 +47,28 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* ABOUT */}
       <section className="section about">
         <div className="about-inner">
           <div className="about-copy">
             <h2>About</h2>
             <p>
-            New small businesses are trying to establish themselves, while old small businesses are trying to keep up with the changing times. 
-
-<strong> For all small businesses, </strong>  finding support, adapting to a new generation, and creating community has been difficult.
-
-{" "}{" "}
-              <strong>STITCH uses an AI matching algorithm to allow small businesses to collaborate on events to attract new customers. </strong>  {" "}
-             
+              New small businesses are trying to establish themselves, while old
+              small businesses are trying to keep up with the changing times.
+              <strong> For all small businesses, </strong> finding support,
+              adapting to a new generation, and creating community has been
+              difficult.{" "}
+              <strong>
+                STITCH uses an AI matching algorithm to allow small businesses
+                to collaborate on events to attract new customers.
+              </strong>{" "}
             </p>
             <ul className="about-points">
-              <li>AI-toggle button: On if you want to get matched with other businesses and given potential event ideas or AI off if you want a regular feed. </li>
+              <li>
+                AI-toggle button: On if you want to get matched with other
+                businesses and given potential event ideas or AI off if you want
+                a regular feed.
+              </li>
               <li>Stitch tab lets businesses co-host events</li>
               <li>Communities tab lets businesses find events in the community. </li>
             </ul>
@@ -73,7 +81,7 @@ export default function Home() {
                 <span>Average User Eagerness during Low-fi User Testing </span>
               </div>
               <div className="about-stat">
-                <span className="big">8.25/10                 </span>
+                <span className="big">8.25/10</span>
                 <span>Ease of Navigation according to User Testers </span>
               </div>
             </div>
@@ -86,36 +94,60 @@ export default function Home() {
         <header className="section-head">
           <h2>Prototypes</h2>
           <p>Early explorations of the Stitch mobile experience.</p>
+
+          {/* B) CTA BUTTON UNDER THE HEADER */}
+          <a
+            href={FIGMA_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn"
+            style={{
+              display: "inline-block",
+              marginTop: "12px",
+              padding: "10px 16px",
+              borderRadius: "9999px",
+              textDecoration: "none",
+              fontWeight: 600,
+              border: "1px solid currentColor",
+            }}
+            aria-label="Access our Med-Fi prototype in Figma (opens in a new tab)"
+          >
+            Access our Med-Fi prototype here →
+          </a>
         </header>
 
         <div className="iphone-row">
-          {/* Replace the backgroundImage URLs with your own prototype screenshots later */}
-          <div
+          {/* A) MAKE EACH TILE CLICKABLE BY WRAPPING WITH <a> */}
+          <a
+            href={FIGMA_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="iphone-tilt"
-            style={{
-              backgroundImage: `url(${home})`,
-            }}
-            aria-label="Prototype: Matching"
+            style={{ backgroundImage: `url(${home})` }}
+            aria-label="Open Med-Fi prototype: Matching (opens in a new tab)"
           />
-          <div
+
+          <a
+            href={FIGMA_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="iphone-tilt"
-            style={{
-              backgroundImage:
-              `url(${msg})`,
-            }}
-            aria-label="Prototype: Event Concepts"
+            style={{ backgroundImage: `url(${msg})` }}
+            aria-label="Open Med-Fi prototype: Event Concepts (opens in a new tab)"
           />
-          <div
+
+          <a
+            href={FIGMA_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="iphone-tilt"
-            style={{
-              backgroundImage:
-                `url(${comm})`,
-            }}
-            aria-label="Prototype: Timeline"
+            style={{ backgroundImage: `url(${comm})` }}
+            aria-label="Open Med-Fi prototype: Timeline (opens in a new tab)"
           />
         </div>
  
-      </section> 
+      </section>
+
       {/* FOOTER */}
       <footer className="site-footer">
         <div className="footer-inner">
