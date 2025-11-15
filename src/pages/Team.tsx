@@ -4,8 +4,8 @@ import sunny from "../assets/sunny.jpg";
 
 const members = [
   { name: "Eva T.", role: "Software Engineer", img: eva },
-  { name: "Maimuna M.", role: "Product Manager", img: maimuna },
-  { name: "Sunny S.", role: "UX Researcher", img: sunny },
+  { name: "Maimuna M.", role: "Software Engineer", img: maimuna },
+  { name: "Sunny S.", role: "UI/UX Designer", img: sunny },
 ];
 
 export default function Team() {

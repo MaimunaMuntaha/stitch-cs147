@@ -22,7 +22,7 @@ const projects: Project[] = [
       "We interviewed 7 small business owners/employees/shoppers to see their rationale for how they shop.",
       img: heroImg,
     pdf: needfindingpptx,
-    pptx: "https://docs.google.com/presentation/d/14mTuNBSAxF_zb3A1ALIWDPT5UeRCrEOAbeUg39zkjrk/edit?usp=sharing",
+    pptx: "p1.pptx",
   },
   {
     title: "A2: POVs and Experience Prototypes",
@@ -30,7 +30,7 @@ const projects: Project[] = [
       "We refined our problem with Point of View statements and generated solutions using How Might We prompts. Then we prototyped the ideas behind our solutions.",
     img: experience,
     pdf: a2pdf, 
-    pptx: "https://docs.google.com/presentation/d/1s8SHX_G_3J-Ng0z3SfqunXdN2g_YhcZ9KFcknWjOJmA/edit?usp=sharing",
+    pptx: "p2.pptx",
   },
   {
     title: "A4: Concept Video",
@@ -38,7 +38,7 @@ const projects: Project[] = [
       "A short concept video that communicates our vision and key interaction moments.",
     videoEmbed: "https://www.youtube.com/embed/GeFFo-6EKmE",
     pdf: a4pdf,
-    pptx: "https://docs.google.com/presentation/d/1skKN9pDN2HrmkZd3-32T2O6-uQZTQOi6UpuxCLyflYQ/edit?usp=sharing",
+    pptx: "p2.pptx",
      
   },
   {
@@ -47,7 +47,7 @@ const projects: Project[] = [
       "Low-fidelity screens to map flows and validate key tasks before investing in visuals.",
     img:a5,
     pdf: a5pdf,
-    pptx: "https://docs.google.com/presentation/d/1dfrfNJ_ENfkONvKOP-xsbO_bJ1eA7WE0NX48ISvEz4s/edit?usp=sharing",
+    pptx: "p5.pptx",
   },
   {
     title: "A6: Medium-fi Prototype",
@@ -56,14 +56,14 @@ const projects: Project[] = [
       img:a6,
 
       pdf: a6pdf,
-    pptx: "https://www.canva.com/design/DAG3AXua7BI/V5wCxYEe-Wtb5S7Ig8ZTFw/view?utm_content=DAG3AXua7BI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3088b10a42",
+    pptx: "p6.pptx",
   },
   {
-    title: "A7: Heuristic Evaluation",
+    title: "A7: Heuristic Evaluation Synthesis",
     blurb:
-      "TBD.",
+      "Our med-fi prototype went through an evaluation by experts, and our changes are synthesized in this document.",
       videoEmbed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    pdf: "#",
+    pdf: "#", 
     pptx: "#",
   },
   {
@@ -75,7 +75,7 @@ const projects: Project[] = [
     pptx: "#",
   },
   {
-    title: "A9: HE Summary",
+    title: "A9: Pitch and Poster",
     blurb:
       "TBD",
       videoEmbed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
@@ -85,7 +85,23 @@ const projects: Project[] = [
   {
     title: "A10: Poster & Pitch",
     blurb:
-      "TBD.",
+      "These are the materials we presented at the CS 147 Project Expo on Dec 5 2025.",
+      videoEmbed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    pdf: "#",
+    pptx: "#",
+  },  
+  {
+    title: "Demo Video ",
+    blurb:
+      "This is an app showcasing our final prototype's functionality.",
+      videoEmbed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    pdf: "#",
+    pptx: "#",
+  },  
+  {
+    title: "Final Report ",
+    blurb:
+      "All of our work can be summarized in this one document!",
       videoEmbed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     pdf: "#",
     pptx: "#",
