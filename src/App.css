@@ -1300,3 +1300,94 @@ html, body, * { cursor: none !important; }
   filter: none !important;
   mix-blend-mode: normal !important;
 }
+.hero-logo {
+  height: 300px;
+  max-width: 100%;
+  object-fit: contain;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* On small screens, shrink it so it doesn't dominate */
+@media (max-width: 640px) {
+  .hero-logo {
+    height: auto;
+    max-height: 180px;
+    margin-bottom: 8px;
+  }
+}
+/* you already have this base: */
+.about .about-inner {
+  max-width: 1200px;
+  margin: 56px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 36px;
+  align-items: center;
+}
+
+/* make it one column on tablets/phones */
+@media (max-width: 900px) {
+  .about .about-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .about-side {
+    /* optional: put stats under the text instead of above */
+    order: 2;
+  }
+
+  .about-copy {
+    order: 1;
+  }
+}
+/* Base button style */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  border: 1px solid currentColor;
+  color: var(--text);
+  background: var(--c-floral);
+  transition: background-color 0.18s ease, transform 0.18s ease,
+    box-shadow 0.18s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  background-color: rgba(124, 140, 106, 0.12);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.btn-secondary {
+  opacity: 0.9;
+}
+
+/* Wrap the two buttons and allow them to wrap on small screens */
+.prototype-actions {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* On narrow screens, let buttons take full width */
+@media (max-width: 640px) {
+  .prototype-actions .btn {
+    width: 100%;
+  }
+}
+@media (max-width: 640px) {
+  .iphone-tilt {
+    height: 420px;      /* instead of super tall 520px */
+    border-radius: 36px;
+  }
+}

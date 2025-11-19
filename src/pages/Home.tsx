@@ -2,8 +2,8 @@ import heroImg from "../assets/stitch.jpeg";
 import home from "../assets/home.png";
 import msg from "../assets/msg.png";
 import comm from "../assets/comm.png";
-import stitchLogo from "../assets/stitch.png"; // ← import your logo
-import ReadMe from "../assets/file/ReadMe.pdf"; // ← import your ReadMe PDF
+import stitchLogo from "../assets/stitch.png"; // ← logo
+import ReadMe from "../assets/file/ReadMe.pdf"; // ← ReadMe PDF
 
 const FIGMA_URL =
   "https://www.figma.com/proto/ARrTEwUiCxvuIFAGOPhEXB/CS147-Med-Fi-Stitch?page-id=0%3A1&node-id=326-5912&viewport=452%2C187%2C0.09&t=iCXGj0zTgU5ueqCq-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=326%3A5912";
@@ -20,12 +20,7 @@ export default function Home() {
               <img
                 src={stitchLogo}
                 alt="Stitch logo"
-                style={{
-                  height: "300px",
-                  maxWidth: "100%",
-                  objectFit: "contain",
-                  marginBottom: "10px",
-                }}
+                className="hero-logo"
               />
               <br />
               small businesses together through community events.
@@ -71,7 +66,9 @@ export default function Home() {
                 a regular feed.
               </li>
               <li>Stitch tab lets businesses co-host events</li>
-              <li>Communities tab lets businesses find events in the community.</li>
+              <li>
+                Communities tab lets businesses find events in the community.
+              </li>
             </ul>
           </div>
 
@@ -96,45 +93,29 @@ export default function Home() {
           <h2>Prototypes</h2>
           <p>Early explorations of the Stitch mobile experience.</p>
 
-          {/* Primary Button: Med-Fi Prototype */}
-          <a
-            href={FIGMA_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn"
-            style={{
-              display: "inline-block",
-              marginTop: "12px",
-              padding: "10px 16px",
-              borderRadius: "9999px",
-              textDecoration: "none",
-              fontWeight: 600,
-              border: "1px solid currentColor",
-            }}
-            aria-label="Access our Med-Fi prototype in Figma (opens in a new tab)"
-          >
-            Access our Med-Fi prototype here →
-          </a>
+          <div className="prototype-actions">
+            {/* Primary Button: Med-Fi Prototype */}
+            <a
+              href={FIGMA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn"
+              aria-label="Access our Med-Fi prototype in Figma (opens in a new tab)"
+            >
+              Access our Med-Fi prototype here →
+            </a>
 
-          {/* Secondary Button: ReadMe */}
-          <a
-            href={ReadMe}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn"
-            style={{
-              display: "inline-block",
-              marginTop: "12px",
-              padding: "10px 16px",
-              borderRadius: "9999px",
-              textDecoration: "none",
-              fontWeight: 600,
-              border: "1px solid currentColor",
-            }}
-            aria-label="Access the project ReadMe (opens in a new tab)"
-          >
-            Access ReadMe here →
-          </a>
+            {/* Secondary Button: ReadMe */}
+            <a
+              href={ReadMe}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-secondary"
+              aria-label="Access the project ReadMe (opens in a new tab)"
+            >
+              Access ReadMe here →
+            </a>
+          </div>
         </header>
 
         <div className="iphone-row">

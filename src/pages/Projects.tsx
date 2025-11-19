@@ -1,111 +1,116 @@
 type Project = {
   title: string;
   blurb: string;
-  img?: string;          
-  videoEmbed?: string;   
+  img?: string;
+  videoEmbed?: string;
+  youtubeLink?: string;   // ⬅️ NEW FIELD
   pdf?: string;
   pptx?: string;
+  cv?: string;
 };
+
 import heroImg from "../assets/needfinding.png";
 import needfindingpptx from "../assets/file/needfinding.pdf";
 import a5 from "../assets/a5.png";
 import a6 from "../assets/a6.png";
+import a7 from "../assets/a7.png";
+import a8 from "../assets/a8.png";
 import experience from "../assets/experience.png";
 import a2pdf from "../assets/file/a2.pdf";
 import a5pdf from "../assets/file/a5.pdf";
-import a4pdf from "../assets/file/a4.pdf";
+import a4pdf from "../assets/file/a4.pdf"; 
+import a8pdf from "../assets/file/a8.pdf";
+import a7pdf from "../assets/file/a7.pdf";
+import stitch from "../assets/stitch.jpeg";
 import a6pdf from "../assets/file/a6.pdf";
+import cvVideo from "../assets/file/cv.mp4";
+
 const projects: Project[] = [
   {
-    title: "A1: Needfinding",
+    title: " Needfinding",
     blurb:
       "We interviewed 7 small business owners/employees/shoppers to see their rationale for how they shop.",
-      img: heroImg,
+    img: heroImg,
     pdf: needfindingpptx,
     pptx: "p1.pptx",
   },
   {
-    title: "A2: POVs and Experience Prototypes",
+    title: " POVs and Experience Prototypes",
     blurb:
       "We refined our problem with Point of View statements and generated solutions using How Might We prompts. Then we prototyped the ideas behind our solutions.",
     img: experience,
-    pdf: a2pdf, 
+    pdf: a2pdf,
     pptx: "p2.pptx",
   },
   {
-    title: "A4: Concept Video",
+    title: " Concept Video",
     blurb:
       "A short concept video that communicates our vision and key interaction moments.",
     videoEmbed: "https://www.youtube.com/embed/GeFFo-6EKmE",
+    youtubeLink: "https://youtu.be/GeFFo-6EKmE?si=r09DMHiZGMBcv_le", // ⬅️ NEW YOUTUBE BUTTON
     pdf: a4pdf,
     pptx: "p2.pptx",
-     
+    cv: cvVideo,
   },
   {
-    title: "A5: Lo-Fi Wireframes",
+    title: "Lo-Fi Wireframes",
     blurb:
       "Low-fidelity screens to map flows and validate key tasks before investing in visuals.",
-    img:a5,
+    img: a5,
     pdf: a5pdf,
     pptx: "p5.pptx",
   },
   {
-    title: "A6: Medium-fi Prototype",
-    blurb:
-      "Our medium fidelity, interactive prototypes on Figma",
-      img:a6,
-
-      pdf: a6pdf,
+    title: " Medium-fi Prototype",
+    blurb: "Our medium fidelity, interactive prototypes on Figma",
+    img: a6,
+    pdf: a6pdf,
     pptx: "p6.pptx",
   },
   {
-    title: "A7: Heuristic Evaluation Synthesis",
+    title: "High-fi Prototype",
+    blurb: "Ourpresentation on the changes made to the high fidelity prototype.", 
+    img: a8,
+    pdf: a8pdf,
+    pptx: "p8.pptx",
+  },
+  {
+    title: " Heuristic Evaluation Synthesis",
+    img: a7,
     blurb:
       "Our med-fi prototype went through an evaluation by experts, and our changes are synthesized in this document.",
-      videoEmbed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    pdf: "#", 
+    pdf: a7pdf,   
+  },
+
+  {
+    title: " Pitch and Poster",
+    blurb: "TBD", 
+    pdf: "#",
+    img: stitch,
     pptx: "#",
   },
   {
-    title: "A8: High-fi Prototype",
+    title: " Poster & Pitch",
     blurb:
-      "TBD.",
-      videoEmbed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "These are the materials we presented at the CS 147 Project Expo on Dec 5 2025.", 
+    pdf: "#",
+    img: stitch,
+    pptx: "#",
+  },
+  {
+    title: "Demo Video",
+    blurb: "This is an app showcasing our final prototype's functionality.", 
+    img: stitch,
     pdf: "#",
     pptx: "#",
   },
   {
-    title: "A9: Pitch and Poster",
-    blurb:
-      "TBD",
-      videoEmbed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    title: "Final Report",
+    blurb: "All of our work can be summarized in this one document!", 
+    img: stitch,
     pdf: "#",
     pptx: "#",
   },
-  {
-    title: "A10: Poster & Pitch",
-    blurb:
-      "These are the materials we presented at the CS 147 Project Expo on Dec 5 2025.",
-      videoEmbed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    pdf: "#",
-    pptx: "#",
-  },  
-  {
-    title: "Demo Video ",
-    blurb:
-      "This is an app showcasing our final prototype's functionality.",
-      videoEmbed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    pdf: "#",
-    pptx: "#",
-  },  
-  {
-    title: "Final Report ",
-    blurb:
-      "All of our work can be summarized in this one document!",
-      videoEmbed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    pdf: "#",
-    pptx: "#",
-  },  
 ];
 
 export default function Projects() {
@@ -143,16 +148,34 @@ export default function Projects() {
                   Slides (pdf)
                 </a>
               )}
+
               {p.pptx && (
-                <a className="pill-btn" href={p.pptx} target="_blank" rel="noreferrer">
+                <a className="pill-btn" href={p.pptx} download>
                   Slides (pptx)
+                </a>
+              )}
+
+              {p.cv && (
+                <a className="pill-btn" href={p.cv} download>
+                  Download video (mp4)
+                </a>
+              )}
+
+              {p.youtubeLink && (
+                <a
+                  className="pill-btn"
+                  href={p.youtubeLink}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Watch on YouTube
                 </a>
               )}
             </div>
           </article>
         ))}
       </div>
-      {/* FOOTER */}
+
       <footer className="site-footer">
         <div className="footer-inner">
           <div className="footer-brand">STITCH</div>
@@ -160,6 +183,5 @@ export default function Projects() {
         </div>
       </footer>
     </section>
-    
   );
 }
