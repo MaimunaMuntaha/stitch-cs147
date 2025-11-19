@@ -3,10 +3,13 @@ type Project = {
   blurb: string;
   img?: string;
   videoEmbed?: string;
-  youtubeLink?: string;   // ⬅️ NEW FIELD
+  youtubeLink?: string;
   pdf?: string;
   pptx?: string;
   cv?: string;
+  xlsx?: string;
+  readme?: string;
+  figmaLink?: string;   // ⬅️ NEW FIELD
 };
 
 import heroImg from "../assets/needfinding.png";
@@ -18,12 +21,13 @@ import a8 from "../assets/a8.png";
 import experience from "../assets/experience.png";
 import a2pdf from "../assets/file/a2.pdf";
 import a5pdf from "../assets/file/a5.pdf";
-import a4pdf from "../assets/file/a4.pdf"; 
+import a4pdf from "../assets/file/a4.pdf";
 import a8pdf from "../assets/file/a8.pdf";
 import a7pdf from "../assets/file/a7.pdf";
 import stitch from "../assets/stitch.jpeg";
 import a6pdf from "../assets/file/a6.pdf";
 import cvVideo from "../assets/file/cv.mp4";
+import readmePDF from "../assets/file/ReadMe.pdf";
 
 const projects: Project[] = [
   {
@@ -47,7 +51,7 @@ const projects: Project[] = [
     blurb:
       "A short concept video that communicates our vision and key interaction moments.",
     videoEmbed: "https://www.youtube.com/embed/GeFFo-6EKmE",
-    youtubeLink: "https://youtu.be/GeFFo-6EKmE?si=r09DMHiZGMBcv_le", // ⬅️ NEW YOUTUBE BUTTON
+    youtubeLink: "https://youtu.be/GeFFo-6EKmE?si=r09DMHiZGMBcv_le",
     pdf: a4pdf,
     pptx: "p2.pptx",
     cv: cvVideo,
@@ -66,10 +70,13 @@ const projects: Project[] = [
     img: a6,
     pdf: a6pdf,
     pptx: "p6.pptx",
+    readme: readmePDF,
+    figmaLink:
+      "https://www.figma.com/proto/ARrTEwUiCxvuIFAGOPhEXB/CS147-Med-Fi-Stitch?page-id=0%3A1&node-id=326-5912&viewport=452%2C187%2C0.09&t=iCXGj0zTgU5ueqCq-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=326%3A5912",  // ⬅️ ADDED FIGMA LINK
   },
   {
     title: "High-fi Prototype",
-    blurb: "Ourpresentation on the changes made to the high fidelity prototype.", 
+    blurb: "Our presentation on the changes made to the high fidelity prototype.",
     img: a8,
     pdf: a8pdf,
     pptx: "p8.pptx",
@@ -79,12 +86,12 @@ const projects: Project[] = [
     img: a7,
     blurb:
       "Our med-fi prototype went through an evaluation by experts, and our changes are synthesized in this document.",
-    pdf: a7pdf,   
+    pdf: a7pdf,
+    xlsx: "/he.xlsx",
   },
-
   {
     title: " Pitch and Poster",
-    blurb: "TBD", 
+    blurb: "TBD",
     pdf: "#",
     img: stitch,
     pptx: "#",
@@ -92,21 +99,21 @@ const projects: Project[] = [
   {
     title: " Poster & Pitch",
     blurb:
-      "These are the materials we presented at the CS 147 Project Expo on Dec 5 2025.", 
+      "These are the materials we presented at the CS 147 Project Expo on Dec 5 2025.",
     pdf: "#",
     img: stitch,
     pptx: "#",
   },
   {
     title: "Demo Video",
-    blurb: "This is an app showcasing our final prototype's functionality.", 
+    blurb: "This is an app showcasing our final prototype's functionality.",
     img: stitch,
     pdf: "#",
     pptx: "#",
   },
   {
     title: "Final Report",
-    blurb: "All of our work can be summarized in this one document!", 
+    blurb: "All of our work can be summarized in this one document!",
     img: stitch,
     pdf: "#",
     pptx: "#",
@@ -143,6 +150,7 @@ export default function Projects() {
             <p className="project-blurb">{p.blurb}</p>
 
             <div className="project-actions">
+
               {p.pdf && (
                 <a className="pill-btn" href={p.pdf} target="_blank" rel="noreferrer">
                   Slides (pdf)
@@ -152,6 +160,29 @@ export default function Projects() {
               {p.pptx && (
                 <a className="pill-btn" href={p.pptx} download>
                   Slides (pptx)
+                </a>
+              )}
+
+              {p.readme && (
+                <a className="pill-btn" href={p.readme} target="_blank" rel="noreferrer">
+                  ReadMe (pdf)
+                </a>
+              )}
+
+              {p.figmaLink && (
+                <a
+                  className="pill-btn"
+                  href={p.figmaLink}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View Figma
+                </a>
+              )}
+
+              {p.xlsx && (
+                <a className="pill-btn" href={p.xlsx} download>
+                  Heuristic Eval (.xlsx)
                 </a>
               )}
 
@@ -171,6 +202,7 @@ export default function Projects() {
                   Watch on YouTube
                 </a>
               )}
+
             </div>
           </article>
         ))}
