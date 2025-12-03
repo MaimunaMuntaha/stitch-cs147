@@ -1,3 +1,9 @@
+type ResourceLink = {
+  label: string;
+  href: string;
+  download?: boolean;
+};
+
 type Project = {
   title: string;
   blurb: string;
@@ -9,7 +15,8 @@ type Project = {
   cv?: string;
   xlsx?: string;
   readme?: string;
-  figmaLink?: string;   // ⬅️ NEW FIELD
+  figmaLink?: string; // ⬅️ existing
+  resources?: ResourceLink[]; // ⬅️ NEW
 };
 
 import heroImg from "../assets/needfinding.png";
@@ -25,9 +32,18 @@ import a4pdf from "../assets/file/a4.pdf";
 import a8pdf from "../assets/file/a8.pdf";
 import a7pdf from "../assets/file/a7.pdf";
 import stitch from "../assets/stitch.jpeg";
+import report from "../assets/file/report.png";
+import poster from "../assets/poster.png";
 import a6pdf from "../assets/file/a6.pdf";
 import cvVideo from "../assets/file/cv.mp4";
-import readmePDF from "../assets/file/ReadMe.pdf";
+import readmePDF from "../assets/file/ReadMe.pdf"; 
+import pitchPdf from "../assets/pitch.pdf"; 
+import posterPdf from "../assets/file/poster.pdf"; 
+import scriptPdf from "../assets/file/script.pdf";
+
+import demoVideoMp4 from "../assets/file/perfect.mp4";
+
+import finalReportPdf from "../assets/file/finalreport.pdf"; 
 
 const projects: Project[] = [
   {
@@ -72,7 +88,7 @@ const projects: Project[] = [
     pptx: "p6.pptx",
     readme: readmePDF,
     figmaLink:
-      "https://www.figma.com/proto/ARrTEwUiCxvuIFAGOPhEXB/CS147-Med-Fi-Stitch?page-id=0%3A1&node-id=326-5912&viewport=452%2C187%2C0.09&t=iCXGj0zTgU5ueqCq-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=326%3A5912",  // ⬅️ ADDED FIGMA LINK
+      "https://www.figma.com/proto/ARrTEwUiCxvuIFAGOPhEXB/CS147-Med-Fi-Stitch?page-id=0%3A1&node-id=326-5912&viewport=452%2C187%2C0.09&t=iCXGj0zTgU5ueqCq-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=326%3A5912",
   },
   {
     title: "High-fi Prototype",
@@ -80,43 +96,50 @@ const projects: Project[] = [
     img: a8,
     pdf: a8pdf,
     pptx: "p8.pptx",
-  },
+  }, 
   {
-    title: " Heuristic Evaluation Synthesis",
-    img: a7,
+    title: " Heuristic Evaluation Synthesis", img: a7, blurb: "Our med-fi prototype went through an evaluation by experts, and our changes are synthesized in this document.", pdf: a7pdf, xlsx: "/he.xlsx",
+  }, 
+  {
+    title: "Pitch & Poster",
     blurb:
-      "Our med-fi prototype went through an evaluation by experts, and our changes are synthesized in this document.",
-    pdf: a7pdf,
-    xlsx: "/he.xlsx",
-  },
-  {
-    title: " Pitch and Poster",
-    blurb: "TBD",
-    pdf: "#",
-    img: stitch,
-    pptx: "#",
-  },
-  {
-    title: " Poster & Pitch",
-    blurb:
-      "These are the materials we presented at the CS 147 Project Expo on Dec 5 2025.",
-    pdf: "#",
-    img: stitch,
-    pptx: "#",
-  },
+      "We will present our project to interested parties from industry and campus in the upcoming CS147 Project Expo on Friday, December 8th from 6 - 9pm.",
+    img: poster,
+    resources: [
+      { label: "Pitch (pdf)", href: pitchPdf },
+      { label: "Pitch (pptx)", href: "pitch.pptx", download: true },
+      { label: "Poster (pdf)", href: posterPdf },
+      { label: "Poster (pptx)", href: "poster.pptx", download: true },
+      { label: "Script (pdf)", href: scriptPdf },
+    ],
+  }, 
   {
     title: "Demo Video",
-    blurb: "This is an app showcasing our final prototype's functionality.",
+    blurb: "We showcased the high-fi prototype of our app for the world to see.",
+    // use your actual demo video embed / link here
+    videoEmbed: "https://www.youtube.com/embed/bAqFJvvU4sE",
     img: stitch,
-    pdf: "#",
-    pptx: "#",
-  },
+    resources: [
+      {
+        label: "Video (link)",
+        href: "https://youtu.be/bAqFJvvU4sE", // or any public link
+      },
+      {
+        label: "Video (mp4)",
+        href: demoVideoMp4,
+        download: true,
+      },
+    ],
+  }, 
   {
     title: "Final Report",
-    blurb: "All of our work can be summarized in this one document!",
-    img: stitch,
-    pdf: "#",
-    pptx: "#",
+    blurb:
+      "We synthesized the work we have done this quarter into a single document.",
+    img: report,
+    resources: [
+      { label: "Doc (pdf)", href: finalReportPdf },
+      { label: "Doc (docx)", href: "finalreport.docx", download: true },
+    ],
   },
 ];
 
@@ -150,59 +173,87 @@ export default function Projects() {
             <p className="project-blurb">{p.blurb}</p>
 
             <div className="project-actions">
+              {/* ✅ Prefer custom resources if they exist */}
+              {p.resources &&
+                p.resources.map((r) => (
+                  <a
+                    key={r.label}
+                    className="pill-btn"
+                    href={r.href}
+                    {...(r.download
+                      ? { download: true }
+                      : { target: "_blank", rel: "noreferrer" })}
+                  >
+                    {r.label}
+                  </a>
+                ))}
 
-              {p.pdf && (
-                <a className="pill-btn" href={p.pdf} target="_blank" rel="noreferrer">
-                  Slides (pdf)
-                </a>
+              {/* 🔙 Fallback to the old-style buttons if no resources[] */}
+              {!p.resources && (
+                <>
+                  {p.pdf && (
+                    <a
+                      className="pill-btn"
+                      href={p.pdf}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Slides (pdf)
+                    </a>
+                  )}
+
+                  {p.pptx && (
+                    <a className="pill-btn" href={p.pptx} download>
+                      Slides (pptx)
+                    </a>
+                  )}
+
+                  {p.readme && (
+                    <a
+                      className="pill-btn"
+                      href={p.readme}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      ReadMe (pdf)
+                    </a>
+                  )}
+
+                  {p.figmaLink && (
+                    <a
+                      className="pill-btn"
+                      href={p.figmaLink}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      View Figma
+                    </a>
+                  )}
+
+                  {p.xlsx && (
+                    <a className="pill-btn" href={p.xlsx} download>
+                      Heuristic Eval (.xlsx)
+                    </a>
+                  )}
+
+                  {p.cv && (
+                    <a className="pill-btn" href={p.cv} download>
+                      Video (mp4)
+                    </a>
+                  )}
+
+                  {p.youtubeLink && (
+                    <a
+                      className="pill-btn"
+                      href={p.youtubeLink}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Video (link)
+                    </a>
+                  )}
+                </>
               )}
-
-              {p.pptx && (
-                <a className="pill-btn" href={p.pptx} download>
-                  Slides (pptx)
-                </a>
-              )}
-
-              {p.readme && (
-                <a className="pill-btn" href={p.readme} target="_blank" rel="noreferrer">
-                  ReadMe (pdf)
-                </a>
-              )}
-
-              {p.figmaLink && (
-                <a
-                  className="pill-btn"
-                  href={p.figmaLink}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  View Figma
-                </a>
-              )}
-
-              {p.xlsx && (
-                <a className="pill-btn" href={p.xlsx} download>
-                  Heuristic Eval (.xlsx)
-                </a>
-              )}
-
-              {p.cv && (
-                <a className="pill-btn" href={p.cv} download>
-                  Download video (mp4)
-                </a>
-              )}
-
-              {p.youtubeLink && (
-                <a
-                  className="pill-btn"
-                  href={p.youtubeLink}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Watch on YouTube
-                </a>
-              )}
-
             </div>
           </article>
         ))}

@@ -2,11 +2,15 @@ import heroImg from "../assets/stitch.jpeg";
 import home from "../assets/home.png";
 import msg from "../assets/msg.png";
 import comm from "../assets/comm.png";
-import stitchLogo from "../assets/stitch.png"; // ← logo
-import ReadMe from "../assets/file/ReadMe.pdf"; // ← ReadMe PDF
+import highfi from "../assets/highfi.png";
+import stitchLogo from "../assets/stitch.png";
+import ReadMe from "../assets/file/ReadMe.pdf";
+import lowfi from "../assets/lowfi.pdf"; 
 
 const FIGMA_URL =
   "https://www.figma.com/proto/ARrTEwUiCxvuIFAGOPhEXB/CS147-Med-Fi-Stitch?page-id=0%3A1&node-id=326-5912&viewport=452%2C187%2C0.09&t=iCXGj0zTgU5ueqCq-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=326%3A5912";
+
+const HIGH_FI_URL = "#"; // placeholder
 
 export default function Home() {
   return (
@@ -94,7 +98,6 @@ export default function Home() {
           <p>Early explorations of the Stitch mobile experience.</p>
 
           <div className="prototype-actions">
-            {/* Primary Button: Med-Fi Prototype */}
             <a
               href={FIGMA_URL}
               target="_blank"
@@ -102,10 +105,19 @@ export default function Home() {
               className="btn"
               aria-label="Access our Med-Fi prototype in Figma (opens in a new tab)"
             >
-              Access our Med-Fi prototype here →
+              Access Med-Fi prototype →
             </a>
 
-            {/* Secondary Button: ReadMe */}
+            <a
+              href={HIGH_FI_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn"
+              aria-label="Access our High-Fi prototype (opens in a new tab)"
+            >
+              Access High-Fi prototype →
+            </a>
+
             <a
               href={ReadMe}
               target="_blank"
@@ -113,39 +125,50 @@ export default function Home() {
               className="btn btn-secondary"
               aria-label="Access the project ReadMe (opens in a new tab)"
             >
-              Access ReadMe here →
+              Access ReadMe →
             </a>
           </div>
         </header>
 
+        {/* iPhones */}
         <div className="iphone-row">
-          {/* Clickable iPhone Tiles */}
+          {/* LOW-FI → lowfi.pdf */}
           <a
-            href={FIGMA_URL}
+            href={lowfi}
             target="_blank"
             rel="noopener noreferrer"
             className="iphone-tilt"
             style={{ backgroundImage: `url(${home})` }}
-            aria-label="Open Med-Fi prototype: Matching (opens in a new tab)"
+            aria-label="Open Low-Fi prototype (PDF, opens in a new tab)"
           />
 
+          {/* MED-FI → Figma */}
           <a
             href={FIGMA_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="iphone-tilt"
             style={{ backgroundImage: `url(${msg})` }}
-            aria-label="Open Med-Fi prototype: Event Concepts (opens in a new tab)"
+            aria-label="Open Med-Fi prototype (Figma, opens in a new tab)"
           />
 
+          {/* HIGH-FI → placeholder */}
           <a
-            href={FIGMA_URL}
+            href={HIGH_FI_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="iphone-tilt"
-            style={{ backgroundImage: `url(${comm})` }}
-            aria-label="Open Med-Fi prototype: Timeline (opens in a new tab)"
+            style={{ backgroundImage: `url(${highfi})` }}
+            aria-label="Open High-Fi prototype (placeholder link, opens in a new tab)"
           />
+        </div>
+
+        {/* Labels under iPhones */}
+        <div className="iphone-label-row">
+          <span className="iphone-label">Low-Fi Prototype</span>
+<span className="iphone-label">Mid-Fi Prototype</span>
+<span className="iphone-label">High-Fi Prototype</span>
+
         </div>
       </section>
 
