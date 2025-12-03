@@ -36,14 +36,16 @@ import report from "../assets/file/report.png";
 import poster from "../assets/poster.png";
 import a6pdf from "../assets/file/a6.pdf";
 import cvVideo from "../assets/file/cv.mp4";
-import readmePDF from "../assets/file/ReadMe.pdf"; 
-import pitchPdf from "../assets/pitch.pdf"; 
-import posterPdf from "../assets/file/poster.pdf"; 
+import readmePDF from "../assets/file/ReadMe.pdf";
+import readmea8PDF from "../assets/readme-a8.pdf";
+import pitchPdf from "../assets/pitch.pdf";
+import posterPdf from "../assets/file/poster.pdf";
 import scriptPdf from "../assets/file/script.pdf";
-
 import demoVideoMp4 from "../assets/file/perfect.mp4";
+import finalReportPdf from "../assets/file/finalreport.pdf";
 
-import finalReportPdf from "../assets/file/finalreport.pdf"; 
+// 🔗 Replace this with your actual high-fi prototype URL (Figma, deployed site, etc.)
+const HIGH_FI_LINK = "https://your-highfi-prototype-link-here";
 
 const projects: Project[] = [
   {
@@ -96,10 +98,22 @@ const projects: Project[] = [
     img: a8,
     pdf: a8pdf,
     pptx: "p8.pptx",
-  }, 
+    // ✅ Use resources[] so the four buttons show up:
+    resources: [
+      { label: "Slides (pdf)", href: a8pdf },
+      { label: "Slides (pptx)", href: "p8.pptx", download: true },
+      { label: "Prototype link", href: HIGH_FI_LINK },
+      { label: "ReadMe (pdf)", href: readmea8PDF },
+    ],
+  },
   {
-    title: " Heuristic Evaluation Synthesis", img: a7, blurb: "Our med-fi prototype went through an evaluation by experts, and our changes are synthesized in this document.", pdf: a7pdf, xlsx: "/he.xlsx",
-  }, 
+    title: " Heuristic Evaluation Synthesis",
+    img: a7,
+    blurb:
+      "Our med-fi prototype went through an evaluation by experts, and our changes are synthesized in this document.",
+    pdf: a7pdf,
+    xlsx: "/he.xlsx",
+  },
   {
     title: "Pitch & Poster",
     blurb:
@@ -112,17 +126,16 @@ const projects: Project[] = [
       { label: "Poster (pptx)", href: "poster.pptx", download: true },
       { label: "Script (pdf)", href: scriptPdf },
     ],
-  }, 
+  },
   {
     title: "Demo Video",
     blurb: "We showcased the high-fi prototype of our app for the world to see.",
-    // use your actual demo video embed / link here
     videoEmbed: "https://www.youtube.com/embed/bAqFJvvU4sE",
     img: stitch,
     resources: [
       {
         label: "Video (link)",
-        href: "https://youtu.be/bAqFJvvU4sE", // or any public link
+        href: "https://youtu.be/bAqFJvvU4sE",
       },
       {
         label: "Video (mp4)",
@@ -130,7 +143,7 @@ const projects: Project[] = [
         download: true,
       },
     ],
-  }, 
+  },
   {
     title: "Final Report",
     blurb:
@@ -173,7 +186,6 @@ export default function Projects() {
             <p className="project-blurb">{p.blurb}</p>
 
             <div className="project-actions">
-              {/* ✅ Prefer custom resources if they exist */}
               {p.resources &&
                 p.resources.map((r) => (
                   <a
@@ -188,7 +200,6 @@ export default function Projects() {
                   </a>
                 ))}
 
-              {/* 🔙 Fallback to the old-style buttons if no resources[] */}
               {!p.resources && (
                 <>
                   {p.pdf && (
