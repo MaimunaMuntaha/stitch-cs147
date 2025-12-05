@@ -37,10 +37,10 @@ import poster from "../assets/poster.png";
 import a6pdf from "../assets/file/a6.pdf";
 import cvVideo from "../assets/file/cv.mp4";
 import readmePDF from "../assets/file/ReadMe.pdf";
-import readmea8PDF from "../assets/readme-a8.pdf";
+import readmea8PDF from "../assets/file/readme-a8.pdf";
 import pitchPdf from "../assets/pitch.pdf";
-import posterPdf from "../assets/file/poster.pdf";
-import scriptPdf from "../assets/file/script.pdf";
+import posterPdf from "../assets/Poster.pdf";
+import scriptPdf from "../assets/script.pdf";
 import demoVideoMp4 from "../assets/file/perfect.mp4";
 import finalReportPdf from "../assets/file/finalreport.pdf";
 
@@ -102,7 +102,7 @@ const projects: Project[] = [
     resources: [
       { label: "Slides (pdf)", href: a8pdf },
       { label: "Slides (pptx)", href: "p8.pptx", download: true },
-      { label: "Prototype link", href: HIGH_FI_LINK },
+      { label: "Prototype link", href: "https://expo.dev/preview/update?message=Fix+keyboard+overlay+issue+in+comment&updateRuntimeVersion=1.0.0&createdAt=2025-12-04T06%3A26%3A27.435Z&slug=exp&projectId=827cb71f-a0e8-440a-959d-f9632c9576a9&group=f5658c3c-c9f9-4507-b369-f41875b1cc16" },
       { label: "ReadMe (pdf)", href: readmea8PDF },
     ],
   },
