@@ -102,7 +102,7 @@ const projects: Project[] = [
     resources: [
       { label: "Slides (pdf)", href: a8pdf },
       { label: "Slides (pptx)", href: "p8.pptx", download: true },
-      { label: "Prototype link", href: "https://expo.dev/preview/update?message=Fix+keyboard+overlay+issue+in+comment&updateRuntimeVersion=1.0.0&createdAt=2025-12-04T06%3A26%3A27.435Z&slug=exp&projectId=827cb71f-a0e8-440a-959d-f9632c9576a9&group=f5658c3c-c9f9-4507-b369-f41875b1cc16" },
+      { label: "Prototype link", href: "https://expo.dev/preview/update?message=final+CS147&updateRuntimeVersion=1.0.0&createdAt=2025-12-07T01%3A12%3A07.259Z&slug=exp&projectId=827cb71f-a0e8-440a-959d-f9632c9576a9&group=fc56df91-c03c-46b4-8199-5fde8cb18cc4" },
       { label: "ReadMe (pdf)", href: readmea8PDF },
     ],
   },
