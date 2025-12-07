@@ -44,9 +44,6 @@ import scriptPdf from "../assets/script.pdf";
 import demoVideoMp4 from "../assets/file/perfect.mp4";
 import finalReportPdf from "../assets/file/finalreport.pdf";
 
-// 🔗 Replace this with your actual high-fi prototype URL (Figma, deployed site, etc.)
-const HIGH_FI_LINK = "https://your-highfi-prototype-link-here";
-
 const projects: Project[] = [
   {
     title: " Needfinding",
@@ -94,7 +91,8 @@ const projects: Project[] = [
   },
   {
     title: "High-fi Prototype",
-    blurb: "Our presentation on the changes made to the high fidelity prototype.",
+    blurb:
+      "Our presentation on the changes made to the high fidelity prototype.",
     img: a8,
     pdf: a8pdf,
     pptx: "p8.pptx",
@@ -102,7 +100,10 @@ const projects: Project[] = [
     resources: [
       { label: "Slides (pdf)", href: a8pdf },
       { label: "Slides (pptx)", href: "p8.pptx", download: true },
-      { label: "Prototype link", href: "https://expo.dev/preview/update?message=final+CS147&updateRuntimeVersion=1.0.0&createdAt=2025-12-07T01%3A12%3A07.259Z&slug=exp&projectId=827cb71f-a0e8-440a-959d-f9632c9576a9&group=fc56df91-c03c-46b4-8199-5fde8cb18cc4" },
+      {
+        label: "Prototype link",
+        href: "https://expo.dev/preview/update?message=final+CS147&updateRuntimeVersion=1.0.0&createdAt=2025-12-07T01%3A12%3A07.259Z&slug=exp&projectId=827cb71f-a0e8-440a-959d-f9632c9576a9&group=fc56df91-c03c-46b4-8199-5fde8cb18cc4",
+      },
       { label: "ReadMe (pdf)", href: readmea8PDF },
     ],
   },
@@ -129,7 +130,8 @@ const projects: Project[] = [
   },
   {
     title: "Demo Video",
-    blurb: "We showcased the high-fi prototype of our app for the world to see.",
+    blurb:
+      "We showcased the high-fi prototype of our app for the world to see.",
     videoEmbed: "https://www.youtube.com/embed/bAqFJvvU4sE",
     img: stitch,
     resources: [

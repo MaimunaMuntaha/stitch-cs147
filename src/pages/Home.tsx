@@ -1,16 +1,16 @@
 import heroImg from "../assets/stitch.jpeg";
 import home from "../assets/home.png";
 import msg from "../assets/msg.png";
-import comm from "../assets/comm.png";
 import highfi from "../assets/highfi.png";
 import stitchLogo from "../assets/stitch.png";
 import ReadMe from "../assets/file/ReadMe.pdf";
-import lowfi from "../assets/lowfi.pdf"; 
+import lowfi from "../assets/lowfi.pdf";
 
 const FIGMA_URL =
   "https://www.figma.com/proto/ARrTEwUiCxvuIFAGOPhEXB/CS147-Med-Fi-Stitch?page-id=0%3A1&node-id=326-5912&viewport=452%2C187%2C0.09&t=iCXGj0zTgU5ueqCq-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=326%3A5912";
 
-const HIGH_FI_URL = "https://expo.dev/preview/update?message=final+CS147&updateRuntimeVersion=1.0.0&createdAt=2025-12-07T01%3A12%3A07.259Z&slug=exp&projectId=827cb71f-a0e8-440a-959d-f9632c9576a9&group=fc56df91-c03c-46b4-8199-5fde8cb18cc4"; // placeholder
+const HIGH_FI_URL =
+  "https://expo.dev/preview/update?message=final+CS147&updateRuntimeVersion=1.0.0&createdAt=2025-12-07T01%3A12%3A07.259Z&slug=exp&projectId=827cb71f-a0e8-440a-959d-f9632c9576a9&group=fc56df91-c03c-46b4-8199-5fde8cb18cc4"; // placeholder
 
 export default function Home() {
   return (
@@ -21,11 +21,7 @@ export default function Home() {
         <div className="hero-inner">
           <div className="hero-text">
             <h1>
-              <img
-                src={stitchLogo}
-                alt="Stitch logo"
-                className="hero-logo"
-              />
+              <img src={stitchLogo} alt="Stitch logo" className="hero-logo" />
               <br />
               small businesses together through community events.
             </h1>
@@ -166,9 +162,8 @@ export default function Home() {
         {/* Labels under iPhones */}
         <div className="iphone-label-row">
           <span className="iphone-label">Low-Fi Prototype</span>
-<span className="iphone-label">Mid-Fi Prototype</span>
-<span className="iphone-label">High-Fi Prototype</span>
-
+          <span className="iphone-label">Mid-Fi Prototype</span>
+          <span className="iphone-label">High-Fi Prototype</span>
         </div>
       </section>
 
