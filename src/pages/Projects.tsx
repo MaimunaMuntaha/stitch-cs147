@@ -102,7 +102,7 @@ const projects: Project[] = [
       { label: "Slides (pptx)", href: "p8.pptx", download: true },
       {
         label: "Prototype link",
-        href: "https://expo.dev/preview/update?message=final+CS147&updateRuntimeVersion=1.0.0&createdAt=2025-12-07T01%3A12%3A07.259Z&slug=exp&projectId=827cb71f-a0e8-440a-959d-f9632c9576a9&group=fc56df91-c03c-46b4-8199-5fde8cb18cc4",
+        href: "https://expo.dev/preview/update?message=final&updateRuntimeVersion=1.0.0&createdAt=2025-12-07T02%3A10%3A31.509Z&slug=exp&projectId=827cb71f-a0e8-440a-959d-f9632c9576a9&group=a239d1e6-b9c5-4eb9-b7b9-0cc8b32e09e3",
       },
       { label: "ReadMe (pdf)", href: readmea8PDF },
     ],
