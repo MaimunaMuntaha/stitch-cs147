@@ -51,13 +51,16 @@ export default function Home() {
             </p>
             <ul className="about-points">
               <li>
-                AI-toggle button: On if you want to get matched with other
-                businesses and given potential event ideas or AI off if you want
-                a regular feed.
+                AI-powered matching based on values, location, and business
+                type.
               </li>
-              <li>Stitch tab lets businesses co-host events</li>
               <li>
-                Communities tab lets businesses find events in the community.
+                Hash out all the details of the event to collaborate on using
+                the in-app Stitch Now feature.
+              </li>
+              <li>
+                Discover other businesses around you through the Communities
+                tab.
               </li>
             </ul>
           </div>
