@@ -15,37 +15,27 @@ const HIGH_FI_URL =
 export default function Home() {
   return (
     <>
-      {/* HERO */}
-      <section className="hero">
+      {/* HERO + ABOUT - 2x2 Grid */}
+      <section className="hero-about-grid">
         <div className="hero-bg-blob" aria-hidden="true" />
-        <div className="hero-inner">
+        <div className="hero-about-inner">
+          {/* Top Left: Logo + Value Statement */}
           <div className="hero-text">
             <h1>
               <img src={stitchLogo} alt="Stitch logo" className="hero-logo" />
               <br />
               small businesses together through community events.
             </h1>
-            <p className="lead">
-              Stitch supports small businesses by connecting them with each
-              other, and with their local communities through co-hosted events.
-            </p>
-            <p>
-              Stitch strengthens communities built by small businesses and turns
-              community gatherings into engines of shared success.
-            </p>
           </div>
 
+          {/* Top Right: Stitch Image */}
           <div className="hero-media">
             <div className="photo-card">
               <img src={heroImg} alt="Stitch hero visual" />
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* ABOUT */}
-      <section className="section about">
-        <div className="about-inner">
+          {/* Bottom Left: About Text */}
           <div className="about-copy">
             <h2>About</h2>
             <p>
@@ -72,6 +62,7 @@ export default function Home() {
             </ul>
           </div>
 
+          {/* Bottom Right: About Stat Card */}
           <div className="about-side">
             <div className="about-card">
               <div className="about-stat">
@@ -148,7 +139,7 @@ export default function Home() {
             aria-label="Open Med-Fi prototype (Figma, opens in a new tab)"
           />
 
-          {/* HIGH-FI → placeholder */}
+          {/* HIGH-FI */}
           <a
             href={HIGH_FI_URL}
             target="_blank"

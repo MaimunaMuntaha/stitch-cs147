@@ -118,7 +118,7 @@ const projects: Project[] = [
   {
     title: "Pitch & Poster",
     blurb:
-      "We will present our project to interested parties from industry and campus in the upcoming CS147 Project Expo on Friday, December 8th from 6 - 9pm.",
+      "We presented our project to interested parties from industry and campus at the CS147 Project Expo on Friday, December 8th from 6 - 9pm. <strong>WE WON BEST POSTER! 🎊 🎉</strong>",
     img: poster,
     resources: [
       { label: "Pitch (pdf)", href: pitchPdf },
@@ -185,7 +185,7 @@ export default function Projects() {
             </div>
 
             <h3 className="project-title">{p.title}</h3>
-            <p className="project-blurb">{p.blurb}</p>
+            <p className="project-blurb" dangerouslySetInnerHTML={{ __html: p.blurb }} />
 
             <div className="project-actions">
               {p.resources &&
